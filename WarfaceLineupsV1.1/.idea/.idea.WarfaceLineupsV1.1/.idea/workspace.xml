@@ -9,14 +9,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3c00a32-c452-4a46-9ea6-a137b0d35059" name="Changes" comment="fhhf" />
+    <list default="true" id="b3c00a32-c452-4a46-9ea6-a137b0d35059" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/http/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/pages/Lineups.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/pages/News.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/pages/Premium.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/pages/Profile.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/pages/Start.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/WarfaceLineupsV1.1.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/WarfaceLineupsV1.1.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/AppRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/AppRouter.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2Uhdz6GsKUd8H8UKQ8JGn59eVW7" />
@@ -45,7 +58,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.WarfaceLineupsV1.1: IIS Express">
+  <component name="RunManager" selected=".NET Launch Settings Profile.WarfaceLineupsV1.1: http">
     <configuration name="WarfaceLineupsV1.1: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/WarfaceLineupsV1.1/WarfaceLineupsV1.1.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
@@ -103,7 +116,18 @@
       <workItem from="1693396009733" duration="1013000" />
       <workItem from="1693401481108" duration="345000" />
       <workItem from="1693401926420" duration="59000" />
+      <workItem from="1693401999278" duration="150000" />
+      <workItem from="1693480012322" duration="2652000" />
     </task>
+    <task id="LOCAL-00001" summary="fhfhfh">
+      <option name="closed" value="true" />
+      <created>1693402085428</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1693402085428</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,6 +137,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="fhhf" />
-    <option name="LAST_COMMIT_MESSAGE" value="fhhf" />
+    <MESSAGE value="fhfhfh" />
+    <option name="LAST_COMMIT_MESSAGE" value="fhfhfh" />
   </component>
 </project>

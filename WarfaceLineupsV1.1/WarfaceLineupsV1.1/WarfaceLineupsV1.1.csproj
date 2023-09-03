@@ -7,4 +7,10 @@
         <RootNamespace>WarfaceLineupsV1._1</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Controllers\" />
+      <Folder Include="Database\" />
+      <Folder Include="Utils\" />
+    </ItemGroup>
+
 </Project>

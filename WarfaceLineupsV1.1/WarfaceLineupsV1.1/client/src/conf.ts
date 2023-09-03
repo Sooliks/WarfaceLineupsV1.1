@@ -1,3 +1,3 @@
 export namespace Config {
-    const isDevelopment: boolean = true;
+    export const isDevelopment: boolean = true;
 }
