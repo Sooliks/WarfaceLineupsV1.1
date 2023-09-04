@@ -10,11 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3c00a32-c452-4a46-9ea6-a137b0d35059" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/AccountsControllers.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/CommentsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/LineupsControllers.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/ModelConfiguration/AccountsConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/ModelConfiguration/AccountsConfig.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Account.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Account.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Lineup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Lineup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerAccounts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerAccounts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/WarfaceLineupsV1.1.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/WarfaceLineupsV1.1.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +115,7 @@
       <workItem from="1693401999278" duration="150000" />
       <workItem from="1693480012322" duration="2652000" />
       <workItem from="1693833240158" duration="2113000" />
-      <workItem from="1693842757949" duration="3258000" />
+      <workItem from="1693842757949" duration="6040000" />
     </task>
     <task id="LOCAL-00001" summary="fhfhfh">
       <option name="closed" value="true" />
@@ -140,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693844840341</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="khjkh">
+      <option name="closed" value="true" />
+      <created>1693846068492</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1693846068492</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +162,7 @@
     <MESSAGE value="fhfhfh" />
     <MESSAGE value="fgfhfh" />
     <MESSAGE value="fhfh" />
-    <option name="LAST_COMMIT_MESSAGE" value="fhfh" />
+    <MESSAGE value="khjkh" />
+    <option name="LAST_COMMIT_MESSAGE" value="khjkh" />
   </component>
 </project>

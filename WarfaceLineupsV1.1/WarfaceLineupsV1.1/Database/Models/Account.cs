@@ -1,3 +1,5 @@
+using WarfaceLineupsV1._1.Database.Requests;
+
 namespace WarfaceLineupsV1._1.Database.Models;
 
 public class Account
@@ -28,4 +30,8 @@ public class Account
         this.Lineups = new List<Lineup>();
         this.Comments = new List<Comment>();
     }
+    
+    public static List<Comment> GetComments(Account account) => HandlerAccounts.GetComments(account);
+    public static List<Lineup> GetAllLineups(Account account) => HandlerAccounts.GetAllLineups(account);
+    public static List<Lineup> GetVerifiedLineups(Account account) => HandlerAccounts.GetVerifiedLineups(account);
 }
