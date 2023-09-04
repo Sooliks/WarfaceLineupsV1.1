@@ -24,5 +24,6 @@ public class Account
         this.Role = "member";
         this.IsVerifiedAccount = false;
         this.IsPremiumAccount = false;
+        this.Lineups = new List<Lineup>();
     }
 }

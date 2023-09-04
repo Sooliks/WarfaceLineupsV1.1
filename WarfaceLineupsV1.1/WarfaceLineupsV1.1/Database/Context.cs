@@ -9,7 +9,9 @@ namespace WarfaceLineupsV1._1.Database;
 
 public class Context : DbContext
 {
-    public DbSet<Account> Account { get; set; }
+    public DbSet<Account> Accounts { get; set; }
+    public DbSet<Lineup> Lineups { get; set; }
+    public DbSet<Comment> Comments { get; set; }
     
 
     public Context()
@@ -36,5 +38,6 @@ public class Context : DbContext
     {
         modelBuilder.ApplyConfiguration(new AccountsConfig());
         modelBuilder.ApplyConfiguration(new LineupsConfig());
+        modelBuilder.ApplyConfiguration(new CommentsConfig());
     }
 }
