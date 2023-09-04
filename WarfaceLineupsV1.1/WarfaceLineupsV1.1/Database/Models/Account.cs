@@ -10,6 +10,7 @@ public class Account
     public bool IsVerifiedAccount { get; set; } 
     public bool IsPremiumAccount { get; set; }
     public List<Lineup> Lineups { get; set; }
+    public List<Comment> Comments { get; set; }
 
     public Account()
     {
@@ -25,5 +26,6 @@ public class Account
         this.IsVerifiedAccount = false;
         this.IsPremiumAccount = false;
         this.Lineups = new List<Lineup>();
+        this.Comments = new List<Comment>();
     }
 }

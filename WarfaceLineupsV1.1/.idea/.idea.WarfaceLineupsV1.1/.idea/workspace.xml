@@ -10,13 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3c00a32-c452-4a46-9ea6-a137b0d35059" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/ModelConfiguration/CommentsConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Comment.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerComments.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Context.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Context.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/ModelConfiguration/AccountsConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/ModelConfiguration/AccountsConfig.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Account.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Account.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Lineup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Lineup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerAccounts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerAccounts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/WarfaceLineupsV1.1.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/WarfaceLineupsV1.1.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +114,7 @@
       <workItem from="1693401999278" duration="150000" />
       <workItem from="1693480012322" duration="2652000" />
       <workItem from="1693833240158" duration="2113000" />
-      <workItem from="1693842757949" duration="2037000" />
+      <workItem from="1693842757949" duration="3258000" />
     </task>
     <task id="LOCAL-00001" summary="fhfhfh">
       <option name="closed" value="true" />
@@ -133,7 +132,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693844040084</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fhfh">
+      <option name="closed" value="true" />
+      <created>1693844840341</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1693844840341</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +152,7 @@
     <MESSAGE value="fhhf" />
     <MESSAGE value="fhfhfh" />
     <MESSAGE value="fgfhfh" />
-    <option name="LAST_COMMIT_MESSAGE" value="fgfhfh" />
+    <MESSAGE value="fhfh" />
+    <option name="LAST_COMMIT_MESSAGE" value="fhfh" />
   </component>
 </project>

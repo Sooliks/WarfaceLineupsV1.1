@@ -10,6 +10,7 @@ public class AccountsConfig : IEntityTypeConfiguration<Account>
     public void Configure(EntityTypeBuilder<Account> builder)
     {
         builder.HasKey(a => a.Id);
-        builder.HasMany(l => l.Lineups);
+        builder.HasMany(a => a.Lineups);
+        builder.HasMany(a => a.Comments);
     }
 }
