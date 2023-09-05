@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KCADyYmKe29K8S9Ekoq35MDXYviI28eKNw2qxFwFIlY2rMNOK7fd2TgJCUA6iQ/3moudn38Vu51P6L4uI2RPOQ==",
+  "dgSpecHash": "08FQVpWepZc6yYsbKv3s0CXHQTgF9VZB2s8vOhwzQSXg13D9UDsMVzgbMnSbd9f2t9p69NREavX193E7bg6Sbw==",
   "success": true,
   "projectFilePath": "C:\\Users\\evgen\\OneDrive\\Рабочий стол\\Projects\\web-sites\\warfacelineups-v.1.1\\WarfaceLineupsV1.1\\WarfaceLineupsV1.1\\WarfaceLineupsV1.1.csproj",
   "expectedPackageFiles": [
@@ -25,6 +25,10 @@
     "C:\\Users\\evgen\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0-preview.2.23128.3\\microsoft.extensions.logging.abstractions.8.0.0-preview.2.23128.3.nupkg.sha512",
     "C:\\Users\\evgen\\.nuget\\packages\\microsoft.extensions.options\\8.0.0-preview.2.23128.3\\microsoft.extensions.options.8.0.0-preview.2.23128.3.nupkg.sha512",
     "C:\\Users\\evgen\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0-preview.2.23128.3\\microsoft.extensions.primitives.8.0.0-preview.2.23128.3.nupkg.sha512",
+    "C:\\Users\\evgen\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.0.0-preview4\\microsoft.identitymodel.abstractions.7.0.0-preview4.nupkg.sha512",
+    "C:\\Users\\evgen\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.0.0-preview4\\microsoft.identitymodel.jsonwebtokens.7.0.0-preview4.nupkg.sha512",
+    "C:\\Users\\evgen\\.nuget\\packages\\microsoft.identitymodel.logging\\7.0.0-preview4\\microsoft.identitymodel.logging.7.0.0-preview4.nupkg.sha512",
+    "C:\\Users\\evgen\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.0.0-preview4\\microsoft.identitymodel.tokens.7.0.0-preview4.nupkg.sha512",
     "C:\\Users\\evgen\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\evgen\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\evgen\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
@@ -38,6 +42,7 @@
     "C:\\Users\\evgen\\.nuget\\packages\\system.configuration.configurationmanager\\4.4.1\\system.configuration.configurationmanager.4.4.1.nupkg.sha512",
     "C:\\Users\\evgen\\.nuget\\packages\\system.diagnostics.diagnosticsource\\7.0.2\\system.diagnostics.diagnosticsource.7.0.2.nupkg.sha512",
     "C:\\Users\\evgen\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
+    "C:\\Users\\evgen\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.0.0-preview4\\system.identitymodel.tokens.jwt.7.0.0-preview4.nupkg.sha512",
     "C:\\Users\\evgen\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
     "C:\\Users\\evgen\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512",
     "C:\\Users\\evgen\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",

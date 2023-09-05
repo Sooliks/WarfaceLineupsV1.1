@@ -11,9 +11,10 @@ public class Comment
     {
         
     }
-    public Comment(string text, Account owner)
+    public Comment(string text, Account owner, Lineup lineup)
     {
         Text = text;
         Owner = owner;
+        Lineup = lineup;
     }
 }

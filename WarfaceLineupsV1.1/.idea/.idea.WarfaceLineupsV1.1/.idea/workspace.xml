@@ -10,13 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3c00a32-c452-4a46-9ea6-a137b0d35059" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/AccountsControllers.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/CommentsController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/LineupsControllers.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Utils/AuthService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Account.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Account.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Comment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Comment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Lineup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Lineup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerComments.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerComments.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerLineups.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerLineups.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/WarfaceLineupsV1.1.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/WarfaceLineupsV1.1.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/Debug/net7.0/WarfaceLineupsV1.1.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/Debug/net7.0/WarfaceLineupsV1.1.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/Debug/net7.0/WarfaceLineupsV1.1.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/Debug/net7.0/WarfaceLineupsV1.1.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/WarfaceLineupsV1.1.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/WarfaceLineupsV1.1.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,27 +40,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.customizations",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.customizations&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\evgen\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\evgen\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\evgen\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\evgen\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\evgen\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\evgen\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.WarfaceLineupsV1.1: http">
     <configuration name="WarfaceLineupsV1.1: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/WarfaceLineupsV1.1/WarfaceLineupsV1.1.csproj" />
@@ -115,7 +122,9 @@
       <workItem from="1693401999278" duration="150000" />
       <workItem from="1693480012322" duration="2652000" />
       <workItem from="1693833240158" duration="2113000" />
-      <workItem from="1693842757949" duration="6040000" />
+      <workItem from="1693842757949" duration="7496000" />
+      <workItem from="1693864028221" duration="595000" />
+      <workItem from="1693909001260" duration="5868000" />
     </task>
     <task id="LOCAL-00001" summary="fhfhfh">
       <option name="closed" value="true" />
@@ -149,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693846068492</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="khk">
+      <option name="closed" value="true" />
+      <created>1693850287012</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1693850287012</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +180,7 @@
     <MESSAGE value="fgfhfh" />
     <MESSAGE value="fhfh" />
     <MESSAGE value="khjkh" />
-    <option name="LAST_COMMIT_MESSAGE" value="khjkh" />
+    <MESSAGE value="khk" />
+    <option name="LAST_COMMIT_MESSAGE" value="khk" />
   </component>
 </project>
