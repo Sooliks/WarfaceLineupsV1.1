@@ -10,7 +10,7 @@ namespace WfTracker.Utils;
 public class AuthService
 {
     private static readonly string SecretString = "3y4O54yGfDg43fFffhG3#ff.,,,,```'94'.jfhwEfg";
-    private static readonly string Issuer = "Sooliks";
+    private static readonly string Issuer = "AmogusSus";
     private static readonly string Audience = "MyAuthClient";
     private static SymmetricSecurityKey GetSymmetricSecurityKey() => new SymmetricSecurityKey(Encoding.UTF8.GetBytes(SecretString));
     
