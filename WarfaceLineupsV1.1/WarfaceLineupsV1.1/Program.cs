@@ -12,11 +12,25 @@ builder.Services.AddCors(options =>
             policy.WithHeaders(HeaderNames.ContentType);
         });
 });
+builder.Services.AddControllers();
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
 
 app.UseCors("_myAllowSpecificOrigins");
+
 app.MapControllers();
+
+
 app.MapGet("/", () => "Hello World!");
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 
 using (Context db = new Context())

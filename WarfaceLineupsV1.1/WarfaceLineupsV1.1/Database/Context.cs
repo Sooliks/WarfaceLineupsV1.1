@@ -29,7 +29,7 @@ public class Context : DbContext
             Server = "localhost",
             Database = "warfacelineups",
             Port = 3306,
-            UserID = "",
+            UserID = "root",
             Password = "",
         };
         optionsBuilder.UseMySQL(connectionString.ConnectionString)

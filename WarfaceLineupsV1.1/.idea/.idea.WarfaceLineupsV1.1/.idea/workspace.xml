@@ -10,15 +10,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3c00a32-c452-4a46-9ea6-a137b0d35059" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/ModelConfiguration/NewsConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/ModelConfiguration/NotificationsConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/News.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Notification.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerNews.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerNotifications.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/MapsControllers.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/NewsControllers.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/NotificationsControllers.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/ReportsControllers.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Models/AuthorizationByJwtData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Models/AuthorizationData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Models/RegistrationData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/AccountsControllers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/AccountsControllers.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Context.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Context.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerReports.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerReports.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerMaps.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerMaps.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/WarfaceLineupsV1.1.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/WarfaceLineupsV1.1.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/Debug/net7.0/WarfaceLineupsV1.1.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/Debug/net7.0/WarfaceLineupsV1.1.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/Debug/net7.0/WarfaceLineupsV1.1.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/Debug/net7.0/WarfaceLineupsV1.1.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/WarfaceLineupsV1.1.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/WarfaceLineupsV1.1.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/WarfaceLineupsV1.1.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/WarfaceLineupsV1.1.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/WarfaceLineupsV1.1.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/WarfaceLineupsV1.1.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +43,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock://C:/Users/evgen/OneDrive/Рабочий стол/Projects/web-sites/warfacelineups-v.1.1/WarfaceLineupsV1.1/WarfaceLineupsV1.1/Database/ModelConfiguration/CommentsConfig.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/evgen/OneDrive/Рабочий стол/Projects/web-sites/warfacelineups-v.1.1/WarfaceLineupsV1.1/WarfaceLineupsV1.1/Database/ModelConfiguration/LineupsConfig.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2Uhdz6GsKUd8H8UKQ8JGn59eVW7" />
@@ -124,7 +138,8 @@
       <workItem from="1693864028221" duration="595000" />
       <workItem from="1693909001260" duration="7104000" />
       <workItem from="1693924913829" duration="31000" />
-      <workItem from="1694100976993" duration="3991000" />
+      <workItem from="1694100976993" duration="7375000" />
+      <workItem from="1694122764006" duration="1729000" />
     </task>
     <task id="LOCAL-00001" summary="fhfhfh">
       <option name="closed" value="true" />
@@ -198,7 +213,23 @@
       <option name="project" value="LOCAL" />
       <updated>1694104606448</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="gjgj">
+      <option name="closed" value="true" />
+      <created>1694105581458</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1694105581458</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fhfhhf">
+      <option name="closed" value="true" />
+      <created>1694106354083</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1694106354083</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,6 +248,8 @@
     <MESSAGE value="fhjgj" />
     <MESSAGE value="jggjg" />
     <MESSAGE value="dfhgdgd" />
-    <option name="LAST_COMMIT_MESSAGE" value="dfhgdgd" />
+    <MESSAGE value="gjgj" />
+    <MESSAGE value="fhfhhf" />
+    <option name="LAST_COMMIT_MESSAGE" value="fhfhhf" />
   </component>
 </project>

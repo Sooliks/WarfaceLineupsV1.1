@@ -11,17 +11,6 @@ public class HandlerMaps
         db.Add(map);
         db.SaveChangesAsync();
     }
-    public static void DeleteMap(int id)
-    {
-        using Context db = new Context();
-        var map = db.Maps.FirstOrDefault(m => m.Id == id);
-        if (map != null)
-        {
-            db.Maps.Remove(map);
-            db.SaveChangesAsync();
-        }
-    }
-
     public static void UpdateMap(int id, string newName)
     {
         using Context db = new Context();
