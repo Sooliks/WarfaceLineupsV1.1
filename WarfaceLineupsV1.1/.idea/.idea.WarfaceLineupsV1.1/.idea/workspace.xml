@@ -10,8 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3c00a32-c452-4a46-9ea6-a137b0d35059" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Utils/EmailService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Utils/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Utils/AuthService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/ModelConfiguration/MapsConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Maps.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerMaps.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Context.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Context.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerLineups.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerLineups.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +117,8 @@
       <workItem from="1693842757949" duration="7496000" />
       <workItem from="1693864028221" duration="595000" />
       <workItem from="1693909001260" duration="7104000" />
+      <workItem from="1693924913829" duration="31000" />
+      <workItem from="1694100976993" duration="1867000" />
     </task>
     <task id="LOCAL-00001" summary="fhfhfh">
       <option name="closed" value="true" />
@@ -162,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693923251984</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fhjgj">
+      <option name="closed" value="true" />
+      <created>1693924938136</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1693924938136</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +192,7 @@
     <MESSAGE value="khjkh" />
     <MESSAGE value="khk" />
     <MESSAGE value="gjjg" />
-    <option name="LAST_COMMIT_MESSAGE" value="gjjg" />
+    <MESSAGE value="fhjgj" />
+    <option name="LAST_COMMIT_MESSAGE" value="fhjgj" />
   </component>
 </project>

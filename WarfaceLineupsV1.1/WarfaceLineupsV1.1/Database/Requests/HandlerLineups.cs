@@ -16,14 +16,17 @@ public static class HandlerLineups
         var lineup = new Lineup(title, description, urlOnVideo, typeGameMap, typeSide, typeFeature, typePlant,
             urlOnPreview, owner);
         db.Lineups.Add(lineup);
-        db.SaveChanges();
+        db.SaveChangesAsync();
     }
     public static void DeleteLineup(int idLineup)
     {
         using Context db = new Context();
-        var lineup = db.Lineups.SingleOrDefault(v=>v.Id==idLineup);
-        db.Lineups.Remove(lineup);
-        db.SaveChanges();
+        var lineup = db.Lineups.FirstOrDefault(v=>v.Id==idLineup);
+        if (lineup != null)
+        {
+            db.Lineups.Remove(lineup);
+            db.SaveChangesAsync();
+        }
     }
     public static void ToPublishLineup(int idLineup)
     {
@@ -31,7 +34,7 @@ public static class HandlerLineups
         var lineup = db.Lineups.SingleOrDefault(v => v.Id == idLineup);
         lineup.IsVerified = true;
         db.Lineups.Update(lineup);
-        db.SaveChanges();
+        db.SaveChangesAsync();
     }
     public static bool VideoIsDuplicate(string urlOnVideo)
     {
