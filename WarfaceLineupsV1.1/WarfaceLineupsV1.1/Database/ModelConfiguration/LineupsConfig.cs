@@ -10,6 +10,7 @@ public class LineupsConfig : IEntityTypeConfiguration<Lineup>
     {
         builder.HasKey(l => l.Id);
         builder.HasOne<Account>(l => l.Owner);
+        builder.HasOne<Map>(l=>l.TypeMap);
         builder.HasMany<Comment>(l=>l.Comments);
     }
 }

@@ -14,9 +14,12 @@ public static class HandlerComments
     public static void DeleteComment(int idComment)
     {
         using Context db = new Context();
-        var comment = db.Comments.SingleOrDefault(c=>c.Id==idComment);
-        db.Comments.Remove(comment);
-        db.SaveChangesAsync();
+        var comment = db.Comments.FirstOrDefault(c=>c.Id==idComment);
+        if (comment != null)
+        {
+            db.Comments.Remove(comment);
+            db.SaveChangesAsync();
+        }
     }
     public static void UpdateComment(int commentId, string newComment)
     {

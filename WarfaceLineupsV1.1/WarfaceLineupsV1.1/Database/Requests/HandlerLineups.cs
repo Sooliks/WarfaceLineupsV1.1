@@ -7,13 +7,13 @@ public static class HandlerLineups
     public static Lineup GetLineupByLineupId(int lineupId)
     {
         using Context db = new Context();
-        return db.Lineups.SingleOrDefault(v => v.Id == lineupId);
+        return db.Lineups.FirstOrDefault(v => v.Id == lineupId);
     }
 
-    public static void AddNewLineup(string title, string description, string urlOnVideo, byte typeGameMap, byte typeSide, byte typeFeature, byte typePlant, string urlOnPreview, Account owner)
+    public static void AddNewLineup(string title, string description, string urlOnVideo, Map map, byte typeSide, byte typeFeature, byte typePlant, string urlOnPreview, Account owner)
     {
         using Context db = new Context();
-        var lineup = new Lineup(title, description, urlOnVideo, typeGameMap, typeSide, typeFeature, typePlant,
+        var lineup = new Lineup(title, description, urlOnVideo, map, typeSide, typeFeature, typePlant,
             urlOnPreview, owner);
         db.Lineups.Add(lineup);
         db.SaveChangesAsync();

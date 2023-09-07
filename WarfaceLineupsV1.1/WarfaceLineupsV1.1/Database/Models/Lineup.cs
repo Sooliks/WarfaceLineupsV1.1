@@ -7,7 +7,7 @@ public class Lineup
     public string Description { get; set; }
     public bool IsVerified { get; set; }
     public string UrlOnVideo { get; set; }
-    public byte TypeGameMap { get; set; } 
+    public Map TypeMap { get; set; } 
     public byte TypeSide { get; set; }
     public byte TypeFeature { get; set; } 
     public byte TypePlant { get; set; }
@@ -19,13 +19,13 @@ public class Lineup
     {
         
     }
-    public Lineup(string title, string description, string urlOnVideo, byte typeGameMap, byte typeSide, byte typeFeature, byte typePlant, string urlOnPreview, Account owner)
+    public Lineup(string title, string description, string urlOnVideo, Map typeMap, byte typeSide, byte typeFeature, byte typePlant, string urlOnPreview, Account owner)
     {
         this.Title = title;
         this.Description = description;
         this.IsVerified = false;
         this.UrlOnVideo = urlOnVideo;
-        this.TypeGameMap = typeGameMap;
+        this.TypeMap = typeMap;
         this.TypeSide = typeSide;
         this.TypeFeature = typeFeature;
         this.TypePlant = typePlant;
