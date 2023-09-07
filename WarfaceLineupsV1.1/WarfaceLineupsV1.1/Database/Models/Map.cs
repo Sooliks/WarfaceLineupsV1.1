@@ -1,15 +1,15 @@
 namespace WarfaceLineupsV1._1.Database.Models;
 
-public class Maps
+public class Map
 {
     public int Id { get; set; }
     public string Name { get; set; }
 
-    public Maps()
+    public Map()
     {
         
     }
-    public Maps(string name)
+    public Map(string name)
     {
         this.Name = name;
     }

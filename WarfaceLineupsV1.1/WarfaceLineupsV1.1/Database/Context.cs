@@ -12,7 +12,8 @@ public class Context : DbContext
     public DbSet<Account> Accounts { get; set; }
     public DbSet<Lineup> Lineups { get; set; }
     public DbSet<Comment> Comments { get; set; }
-    public DbSet<Maps> Maps { get; set; }
+    public DbSet<Map> Maps { get; set; }
+    public DbSet<Report> Reports { get; set; }
     
 
     public Context()

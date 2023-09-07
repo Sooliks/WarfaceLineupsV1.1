@@ -7,7 +7,7 @@ public class HandlerMaps
     public static void AddMap(string name)
     {
         using Context db = new Context();
-        var map = new Maps(name);
+        var map = new Map(name);
         db.Add(map);
         db.SaveChangesAsync();
     }

@@ -16,15 +16,18 @@ public static class HandlerComments
         using Context db = new Context();
         var comment = db.Comments.SingleOrDefault(c=>c.Id==idComment);
         db.Comments.Remove(comment);
-        db.SaveChanges();
+        db.SaveChangesAsync();
     }
     public static void UpdateComment(int commentId, string newComment)
     {
         using Context db = new Context();
-        var comment = db.Comments.SingleOrDefault(c => c.Id == commentId);
-        comment.Text = newComment;
-        db.Comments.Update(comment);
-        db.SaveChanges();
+        var comment = db.Comments.FirstOrDefault(c => c.Id == commentId);
+        if (comment != null)
+        {
+            comment.Text = newComment;
+            db.Comments.Update(comment);
+            db.SaveChangesAsync();
+        }
     }
     public static bool IsAccountOwnerComment(Account account, int commentId)
     {

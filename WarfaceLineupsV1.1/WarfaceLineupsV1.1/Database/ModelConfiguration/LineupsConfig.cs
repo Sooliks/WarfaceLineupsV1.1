@@ -8,6 +8,8 @@ public class LineupsConfig : IEntityTypeConfiguration<Lineup>
 {
     public void Configure(EntityTypeBuilder<Lineup> builder)
     {
-        builder.HasKey(a => a.Id);
+        builder.HasKey(l => l.Id);
+        builder.HasOne<Account>(l => l.Owner);
+        builder.HasMany<Comment>(l=>l.Comments);
     }
 }

@@ -8,6 +8,8 @@ public class CommentsConfig : IEntityTypeConfiguration<Comment>
 {
     public void Configure(EntityTypeBuilder<Comment> builder)
     {
-        builder.HasKey(v => v.Id);
+        builder.HasKey(c => c.Id);
+        builder.HasOne<Account>(c => c.Owner);
+        builder.HasOne<Lineup>(c => c.Lineup);
     }
 }

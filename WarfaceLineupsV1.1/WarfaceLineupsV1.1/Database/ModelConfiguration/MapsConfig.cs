@@ -4,10 +4,10 @@ using WarfaceLineupsV1._1.Database.Models;
 
 namespace WarfaceLineupsV1._1.Database.ModelConfiguration;
 
-public class MapsConfig : IEntityTypeConfiguration<Maps>
+public class MapsConfig : IEntityTypeConfiguration<Map>
 {
-    public void Configure(EntityTypeBuilder<Maps> builder)
+    public void Configure(EntityTypeBuilder<Map> builder)
     {
-        builder.HasKey(a => a.Id);
+        builder.HasKey(m => m.Id);
     }
 }
