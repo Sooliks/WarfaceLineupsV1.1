@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using WarfaceLineupsV1._1.Filters;
 using WarfaceLineupsV1._1.Models;
 
 namespace WarfaceLineupsV1._1.Controllers;
@@ -17,8 +18,15 @@ public class AccountsControllers : Controller
     }
 
     [HttpPost("api/authorizationbyjwt")]
-    public async Task<IResult> AuthorizationByJwt(AuthorizationByJwtData authorizationByJwtData)
+    public async Task<IResult> OnAuthorizationByJwt(AuthorizationByJwtData authorizationByJwtData)
     {
         return Results.Ok();
+    }
+
+    [AuthorizeByJwt]
+    [HttpGet("api/getverificationcode")]
+    public async Task GetVerificationCode()
+    {
+        
     }
 }

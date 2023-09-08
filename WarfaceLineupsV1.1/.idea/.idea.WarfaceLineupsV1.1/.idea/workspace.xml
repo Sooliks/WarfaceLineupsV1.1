@@ -10,28 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3c00a32-c452-4a46-9ea6-a137b0d35059" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/MapsControllers.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/NewsControllers.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/NotificationsControllers.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/ReportsControllers.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Models/AuthorizationByJwtData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Models/AuthorizationData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Models/RegistrationData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Filters/AuthorizeByJwt.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/AccountsControllers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/AccountsControllers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Context.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Context.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerMaps.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerMaps.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/WarfaceLineupsV1.1.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/WarfaceLineupsV1.1.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/Debug/net7.0/WarfaceLineupsV1.1.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/Debug/net7.0/WarfaceLineupsV1.1.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/Debug/net7.0/WarfaceLineupsV1.1.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/Debug/net7.0/WarfaceLineupsV1.1.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/WarfaceLineupsV1.1.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/WarfaceLineupsV1.1.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/WarfaceLineupsV1.1.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/WarfaceLineupsV1.1.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/WarfaceLineupsV1.1.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/WarfaceLineupsV1.1.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +43,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.customizations&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;HotReloadSettingsPage&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -139,7 +120,8 @@
       <workItem from="1693909001260" duration="7104000" />
       <workItem from="1693924913829" duration="31000" />
       <workItem from="1694100976993" duration="7375000" />
-      <workItem from="1694122764006" duration="1729000" />
+      <workItem from="1694122764006" duration="3211000" />
+      <workItem from="1694167702841" duration="1736000" />
     </task>
     <task id="LOCAL-00001" summary="fhfhfh">
       <option name="closed" value="true" />
@@ -229,7 +211,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694106354083</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="gjgjgj">
+      <option name="closed" value="true" />
+      <created>1694124521911</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1694124521912</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,6 +240,7 @@
     <MESSAGE value="dfhgdgd" />
     <MESSAGE value="gjgj" />
     <MESSAGE value="fhfhhf" />
-    <option name="LAST_COMMIT_MESSAGE" value="fhfhhf" />
+    <MESSAGE value="gjgjgj" />
+    <option name="LAST_COMMIT_MESSAGE" value="gjgjgj" />
   </component>
 </project>
