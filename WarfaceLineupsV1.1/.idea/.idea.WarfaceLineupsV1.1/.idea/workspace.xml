@@ -10,9 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3c00a32-c452-4a46-9ea6-a137b0d35059" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Filters/AuthorizeByJwt.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/AccountsControllers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/AccountsControllers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Filters/AuthorizeByJwt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Filters/AuthorizeByJwt.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +121,7 @@
       <workItem from="1693924913829" duration="31000" />
       <workItem from="1694100976993" duration="7375000" />
       <workItem from="1694122764006" duration="3211000" />
-      <workItem from="1694167702841" duration="1736000" />
+      <workItem from="1694167702841" duration="4773000" />
     </task>
     <task id="LOCAL-00001" summary="fhfhfh">
       <option name="closed" value="true" />
@@ -219,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694124521912</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="gjgjjg">
+      <option name="closed" value="true" />
+      <created>1694171399214</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1694171399214</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,6 +249,7 @@
     <MESSAGE value="gjgj" />
     <MESSAGE value="fhfhhf" />
     <MESSAGE value="gjgjgj" />
-    <option name="LAST_COMMIT_MESSAGE" value="gjgjgj" />
+    <MESSAGE value="gjgjjg" />
+    <option name="LAST_COMMIT_MESSAGE" value="gjgjjg" />
   </component>
 </project>

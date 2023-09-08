@@ -25,8 +25,8 @@ public class AccountsControllers : Controller
 
     [AuthorizeByJwt]
     [HttpGet("api/getverificationcode")]
-    public async Task GetVerificationCode()
+    public async Task<IResult>  GetVerificationCode()
     {
-        
+        return Results.BadRequest();
     }
 }
