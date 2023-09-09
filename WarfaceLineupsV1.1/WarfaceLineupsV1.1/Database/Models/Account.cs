@@ -11,6 +11,7 @@ public class Account
     public string Role { get; set; }
     public bool IsVerifiedAccount { get; set; } 
     public bool IsPremiumAccount { get; set; }
+    public string VerificationCode { get; set; }
     public List<Lineup> Lineups { get; set; }
     public List<Comment> Comments { get; set; }
 
@@ -27,6 +28,7 @@ public class Account
         this.Role = "member";
         this.IsVerifiedAccount = false;
         this.IsPremiumAccount = false;
+        this.VerificationCode = "";
         this.Lineups = new List<Lineup>();
         this.Comments = new List<Comment>();
     }

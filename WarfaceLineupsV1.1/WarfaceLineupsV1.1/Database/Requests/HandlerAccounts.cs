@@ -1,4 +1,5 @@
 using WarfaceLineupsV1._1.Database.Models;
+using WfTracker.Utils;
 
 namespace WarfaceLineupsV1._1.Database.Requests;
 
@@ -37,8 +38,8 @@ public static class HandlerAccounts
             string saltePassword = Bcrypt.BCrypt.HashPassword(password, Bcrypt.BCrypt.GenerateSalt());
             var account = new Account(login, email, saltePassword);
             db.Accounts.Add(account);
-            db.SaveChangesAsync();
-            return account;
+            db.SaveChanges();
+            return db.Accounts.FirstOrDefault(a=>a.Email == account.Email);
         }
     }
     public static List<Comment> GetComments(Account account)
@@ -48,7 +49,6 @@ public static class HandlerAccounts
         db.Entry(account).Collection(c=>c.Comments).Load();
         return account.Comments;
     }
-
     public static List<Lineup> GetAllLineups(Account account)
     {
         using Context db = new Context();
@@ -56,12 +56,49 @@ public static class HandlerAccounts
         db.Entry(account).Collection(c=>c.Lineups).Load();
         return account.Lineups;
     }
-
     public static List<Lineup> GetVerifiedLineups(Account account)
     {
         using Context db = new Context();
         account = db.Accounts.SingleOrDefault(a => a == account);
         db.Entry(account).Collection(c=>c.Lineups).Load();
         return account.Lineups.Where(l => l.IsVerified).ToList();
+    }
+    public static Account GetAccountByEmail(string email)
+    {
+        using Context db = new Context();
+        var account = db.Accounts.FirstOrDefault(a => a.Email == email);
+        return account;
+    }
+    public static Account GetAccountByLogin(string login)
+    {
+        using Context db = new Context();
+        var account = db.Accounts.FirstOrDefault(a => a.Login == login);
+        return account;
+    }
+    public static string GenerateVerificationCodeForAccount(Account account)
+    {
+        using Context db = new Context();
+        if (account != null)
+        {
+            var verificationCode = AuthService.GenerateVerificationCode();
+            account.VerificationCode = verificationCode;
+            db.Accounts.Update(account);
+            db.SaveChangesAsync();
+            return verificationCode;
+        }
+        return "";
+    }
+    public static bool CheckIsValidVerificationCodeForAccount(Account account, string verificationCode)
+    {
+        using Context db = new Context();
+        if (account.VerificationCode == verificationCode)
+        {
+            account.IsVerifiedAccount = true;
+            account.VerificationCode = "";
+            db.Accounts.Update(account);
+            db.SaveChangesAsync();
+            return true;
+        }
+        return false;
     }
 }

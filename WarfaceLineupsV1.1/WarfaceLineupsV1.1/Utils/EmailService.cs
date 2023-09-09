@@ -15,7 +15,7 @@ public class EmailService
     private static readonly string Host = "smtp.mail.ru";
     private static readonly int Port = 587;
     
-    public static async Task<bool> SendEmailAsync(string email, string subject, string message)
+    public static bool SendEmailAsync(string email, string subject, string message)
     {
         try
         {
