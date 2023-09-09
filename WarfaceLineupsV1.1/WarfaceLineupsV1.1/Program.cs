@@ -1,5 +1,6 @@
 using Microsoft.Net.Http.Headers;
 using WarfaceLineupsV1._1.Database;
+using WarfaceLineupsV1._1.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
@@ -16,6 +17,10 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+/*builder.Services.AddControllers(options => 
+{ 
+    options.Filters.Add<AuthorizeByJwt>(); 
+}); */
 
 var app = builder.Build();
 

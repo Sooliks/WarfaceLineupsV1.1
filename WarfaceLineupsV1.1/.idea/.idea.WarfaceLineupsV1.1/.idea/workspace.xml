@@ -13,6 +13,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/AccountsControllers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/AccountsControllers.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Filters/AuthorizeByJwt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Filters/AuthorizeByJwt.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +122,9 @@
       <workItem from="1693924913829" duration="31000" />
       <workItem from="1694100976993" duration="7375000" />
       <workItem from="1694122764006" duration="3211000" />
-      <workItem from="1694167702841" duration="4773000" />
+      <workItem from="1694167702841" duration="4786000" />
+      <workItem from="1694218707303" duration="266000" />
+      <workItem from="1694260031429" duration="6627000" />
     </task>
     <task id="LOCAL-00001" summary="fhfhfh">
       <option name="closed" value="true" />
@@ -227,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694171399214</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fhfh">
+      <option name="closed" value="true" />
+      <created>1694181024124</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1694181024124</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +250,6 @@
     <MESSAGE value="fhhf" />
     <MESSAGE value="fhfhfh" />
     <MESSAGE value="fgfhfh" />
-    <MESSAGE value="fhfh" />
     <MESSAGE value="khjkh" />
     <MESSAGE value="khk" />
     <MESSAGE value="gjjg" />
@@ -250,6 +260,7 @@
     <MESSAGE value="fhfhhf" />
     <MESSAGE value="gjgjgj" />
     <MESSAGE value="gjgjjg" />
-    <option name="LAST_COMMIT_MESSAGE" value="gjgjjg" />
+    <MESSAGE value="fhfh" />
+    <option name="LAST_COMMIT_MESSAGE" value="fhfh" />
   </component>
 </project>

@@ -15,13 +15,11 @@ public class AuthorizeByJwt : Attribute, IResourceFilter
     {
         var jwtToken = context.HttpContext.Request.Headers["authorization"];
         var login = context.HttpContext.Request.Headers["login"];
+        
         if (!AuthService.CheckIsValidToken(jwtToken, login))
         {
-            context.HttpContext.Response.StatusCode = 401;
-        }
-        else
-        {
-            
+            context.Result = new UnauthorizedResult();
+            return;
         }
     }
     public void OnResourceExecuted(ResourceExecutedContext context)
