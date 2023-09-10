@@ -71,8 +71,7 @@ public class AccountsControllers : Controller
     [HttpGet("api/getverificationcode")]
     public async Task<IResult>  GetVerificationCode()
     {
-        var login = Request.Headers["login"];
-        var account = HandlerAccounts.GetAccountByLogin(login);
+        var account = HandlerAccounts.GetAccountByLogin(Request.Headers["login"]);
         if (account.VerificationCode != "")
         {
             return Results.BadRequest("Код подтверждения уже отправлен");

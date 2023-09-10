@@ -50,4 +50,11 @@ public static class HandlerComments
         }
         return false;
     }
+    public static List<Comment> GetAllCommentsByLineupIdAndPage(int lineupId, int page)
+    {
+        using Context db = new Context();
+        const int countCommentsOnOnePage = 8;
+        int minId = (page * countCommentsOnOnePage) - countCommentsOnOnePage;
+        return db.Comments.OrderByDescending(c=>c.Id).Where(c=>c.Lineup.Id == lineupId).Skip(minId).Take(countCommentsOnOnePage).ToList();
+    }
 }
