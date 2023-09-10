@@ -35,4 +35,10 @@ public class HandlerNotifications
         using Context db = new Context();
         return db.Notifications.Count(n => n.Recipient == account);
     }
+
+    public static Notification GetNotificationById(int id)
+    {
+        using Context db = new Context();
+        return db.Notifications.FirstOrDefault(n => n.Id == id);
+    }
 }

@@ -9,15 +9,16 @@ public class HandlerReports
         using Context db = new Context();
         return db.Reports.Where(r => r.Status == "expected").ToList();
     }
-    public static void AddNewReport(Account sender,Lineup lineup, string typeReport)
+    public static bool AddNewReport(Account sender,Lineup lineup, string typeReport)
     {
         using Context db = new Context();
         var r = db.Reports.FirstOrDefault(r => r.Lineup == lineup && r.Sender == sender);
-        if (r != null) return;
+        if (r != null) return false;
         
         var report = new Report(sender, lineup, typeReport);
         db.Reports.Add(report);
         db.SaveChangesAsync();
+        return true;
     }
     public static void SetReportComplete(int reportId)
     {
