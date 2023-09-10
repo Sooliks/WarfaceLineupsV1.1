@@ -48,4 +48,31 @@ public class LineupsControllers : Controller
         HandlerLineups.DeleteLineup(lineupId);
         return Results.Ok();
     }
+    [AuthorizeByJwt]
+    [HttpDelete("api/deletelineup/user")]
+    public async Task<IResult> DeleteLineupUser([FromBody]int lineupId)
+    {
+        var account = HandlerAccounts.GetAccountByLogin(Request.Headers["login"]);
+        var lineup = HandlerLineups.GetLineupByLineupId(lineupId);
+        if (lineup.Owner.Id != account.Id)
+        {
+            return Results.BadRequest();
+        }
+        HandlerLineups.DeleteLineup(lineupId);
+        return Results.Ok();
+    }
+
+    [AuthorizeAdminByJwt]
+    [HttpPost("api/publishlineup")]
+    public async Task<IResult> ToPublishLineup([FromBody]int lineupId)
+    {
+        HandlerLineups.ToPublishLineup(lineupId);
+        return Results.Ok();
+    }
+
+    [HttpGet("api/lineup/{id:int}")]
+    public async Task<IResult> GetLineupById(int id)
+    {
+        return Results.Json(HandlerLineups.GetVerifiedLineupByLineupId(id));
+    }
 }

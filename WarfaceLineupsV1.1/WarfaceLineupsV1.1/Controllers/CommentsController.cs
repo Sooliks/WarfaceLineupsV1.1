@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using WarfaceLineupsV1._1.Database.Requests;
 using WarfaceLineupsV1._1.Filters;
+using WarfaceLineupsV1._1.Models;
 
 namespace WarfaceLineupsV1._1.Controllers;
 
@@ -8,12 +9,12 @@ public class CommentsController : Controller
 {
     [AuthorizeByJwt]
     [HttpPost("api/addcomment")]
-    public async Task<IResult> AddNewComment([FromBody]int idLineup, [FromBody]string text)
+    public async Task<IResult> AddNewComment([FromBody]AddCommentData addCommentData)
     {
         var login = Request.Headers["login"];
         var account = HandlerAccounts.GetAccountByLogin(login);
-        HandlerComments.AddNewComment(account,idLineup,text);
-        return Results.Json(new {message = "success", comments = HandlerComments.GetAllCommentsByLineupIdAndPage(idLineup,1)});
+        HandlerComments.AddNewComment(account,addCommentData.IdLineup,addCommentData.Text);
+        return Results.Json(new {message = "success", comments = HandlerComments.GetAllCommentsByLineupIdAndPage(addCommentData.IdLineup,1)});
     }
 
     [HttpGet("api/comments")]
@@ -24,12 +25,12 @@ public class CommentsController : Controller
     
     [AuthorizeByJwt]
     [HttpPost("api/updatecomment")]
-    public async Task<IResult> UpdateComment([FromBody]int idComment, [FromBody]string newComment)
+    public async Task<IResult> UpdateComment([FromBody]UpdateCommentData updateCommentData)
     {
         var account = HandlerAccounts.GetAccountByLogin(Request.Headers["login"]);
-        if (HandlerComments.IsAccountOwnerComment(account, idComment))
+        if (HandlerComments.IsAccountOwnerComment(account, updateCommentData.IdComment))
         {
-            HandlerComments.UpdateComment(idComment, newComment);
+            HandlerComments.UpdateComment(updateCommentData.IdComment, updateCommentData.NewText);
             return Results.Ok();
         }
         return Results.BadRequest();
@@ -37,32 +38,32 @@ public class CommentsController : Controller
     
     [AuthorizeByJwt]
     [HttpDelete("api/deletecomment/user")]
-    public async Task<IResult> DeleteCommentUser([FromBody]int idComment)
+    public async Task<IResult> DeleteCommentUser([FromBody]DeleteCommentData deleteCommentData)
     {
         var account = HandlerAccounts.GetAccountByLogin(Request.Headers["login"]);
-        if (HandlerComments.IsAccountOwnerComment(account, idComment))
+        if (HandlerComments.IsAccountOwnerComment(account, deleteCommentData.IdComment))
         {
-            HandlerComments.DeleteComment(idComment);
+            HandlerComments.DeleteComment(deleteCommentData.IdComment);
             return Results.Ok();
         }
         return Results.BadRequest();
     }
     [AuthorizeAdminByJwt]
-    [HttpPost("api/deletecomment/admin")]
-    public async Task<IResult> DeleteCommentAdmin([FromBody]int idComment)
+    [HttpDelete("api/deletecomment/admin")]
+    public async Task<IResult> DeleteCommentAdmin([FromBody]DeleteCommentData deleteCommentData)
     {
-        HandlerComments.DeleteComment(idComment);
+        HandlerComments.DeleteComment(deleteCommentData.IdComment);
         return Results.Ok();
     }
     
     [AuthorizeByJwt]
-    [HttpPost("api/deletecomment/ownerlineup")]
-    public async Task<IResult> DeleteCommentOwnerLineup([FromBody]int idComment)
+    [HttpDelete("api/deletecomment/ownerlineup")]
+    public async Task<IResult> DeleteCommentOwnerLineup([FromBody]DeleteCommentData deleteCommentData)
     {
         var account = HandlerAccounts.GetAccountByLogin(Request.Headers["login"]);
-        if (HandlerComments.IsCommentBelongToAccount(account,idComment))
+        if (HandlerComments.IsCommentBelongToAccount(account,deleteCommentData.IdComment))
         {
-            HandlerComments.DeleteComment(idComment);
+            HandlerComments.DeleteComment(deleteCommentData.IdComment);
             return Results.Ok();
         }
 

@@ -5,6 +5,11 @@ namespace WarfaceLineupsV1._1.Database.Requests;
 
 public static class HandlerLineups
 {
+    public static Lineup GetVerifiedLineupByLineupId(int lineupId)
+    {
+        using Context db = new Context();
+        return db.Lineups.FirstOrDefault(v => v.Id == lineupId && v.IsVerified == true);
+    }
     public static Lineup GetLineupByLineupId(int lineupId)
     {
         using Context db = new Context();
