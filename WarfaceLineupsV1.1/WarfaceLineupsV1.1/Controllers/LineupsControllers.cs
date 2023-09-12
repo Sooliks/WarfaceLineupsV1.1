@@ -75,4 +75,20 @@ public class LineupsControllers : Controller
     {
         return Results.Json(HandlerLineups.GetVerifiedLineupByLineupId(id));
     }
+
+    [AuthorizeByJwt]
+    [HttpPost("api/addlineup")]
+    public async Task<IResult> AddLineup([FromBody]AddLineupData addLineupData)
+    {
+        IFormFileCollection files = Request.Form.Files;
+        if (files.Count is 0)
+        {
+            
+            return Results.Ok();
+        }
+        else
+        {
+            return Results.Ok();
+        }
+    }
 }

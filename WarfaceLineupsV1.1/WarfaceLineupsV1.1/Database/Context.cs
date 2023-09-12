@@ -16,6 +16,7 @@ public class Context : DbContext
     public DbSet<Report> Reports { get; set; }
     public DbSet<Notification> Notifications { get; set; }
     public DbSet<News> News { get; set; }
+    public DbSet<Screenshot> Screenshots { get; set; }
 
     public Context()
     {
@@ -46,5 +47,6 @@ public class Context : DbContext
         modelBuilder.ApplyConfiguration(new NewsConfig());
         modelBuilder.ApplyConfiguration(new NotificationsConfig());
         modelBuilder.ApplyConfiguration(new ReportsConfig());
+        modelBuilder.ApplyConfiguration(new ScreenshotsConfig());
     }
 }

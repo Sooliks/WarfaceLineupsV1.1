@@ -16,6 +16,7 @@ const authInterceptor = (config: any) => {
 }
 
 $clientAuth.interceptors.request.use(authInterceptor)
+
 export {
     $client,
     $clientAuth
