@@ -81,13 +81,15 @@ public class LineupsControllers : Controller
     public async Task<IResult> AddLineup([FromBody]AddLineupData addLineupData)
     {
         IFormFileCollection files = Request.Form.Files;
+        var account = HandlerAccounts.GetAccountByLogin(Request.Headers["login"]);
         if (files.Count is 0)
         {
-            
+            HandlerLineups.AddNewLineup(addLineupData.Title, addLineupData.Description, addLineupData.UrlOnVideo, HandlerMaps.GetMapById(addLineupData.TypeGameMap), addLineupData.TypeSide, addLineupData.TypeFeature, addLineupData.TypePlant, account);
             return Results.Ok();
         }
         else
         {
+            HandlerLineups.AddNewLineup(addLineupData.Title, addLineupData.Description, HandlerMaps.GetMapById(addLineupData.TypeGameMap), addLineupData.TypeSide, addLineupData.TypeFeature, addLineupData.TypePlant, files, account);
             return Results.Ok();
         }
     }

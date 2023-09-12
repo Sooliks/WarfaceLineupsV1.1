@@ -11,9 +11,8 @@ public class Screenshot
         
     }
 
-    public Screenshot(byte[] data, Lineup lineup)
+    public Screenshot(byte[] data)
     {
         this.Data = data;
-        this.Lineup = lineup;
     }
 }

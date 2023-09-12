@@ -16,11 +16,28 @@ public static class HandlerLineups
         return db.Lineups.FirstOrDefault(v => v.Id == lineupId);
     }
 
-    public static void AddNewLineup(string title, string description, string urlOnVideo, Map map, byte typeSide, byte typeFeature, byte typePlant, byte[] preview, Account owner)
+    public static void AddNewLineup(string title, string description, string urlOnVideo, Map map, byte typeSide, byte typeFeature, byte typePlant, Account owner)
     {
         using Context db = new Context();
-        var lineup = new Lineup(title, description, urlOnVideo, map, typeSide, typeFeature, typePlant,
-            preview, owner);
+        var lineup = new Lineup(title, description, urlOnVideo, map, typeSide, typeFeature, typePlant, null, owner);
+        db.Lineups.Add(lineup);
+        db.SaveChangesAsync();
+    }
+
+    public static void AddNewLineup(string title, string description, Map map, byte typeSide, byte typeFeature, byte typePlant, IFormFileCollection screenshots, Account owner)
+    {
+        using Context db = new Context();
+        var lineup = new Lineup(title, description, null, map, typeSide, typeFeature, typePlant, null, owner);
+        
+        foreach (var screenshot in screenshots)
+        {
+            using (var ms = new MemoryStream())
+            {
+                screenshot.CopyTo(ms);
+                var fileBytes = ms.ToArray();
+                lineup.Screenshots.Add(new Screenshot(fileBytes));
+            }
+        }
         db.Lineups.Add(lineup);
         db.SaveChangesAsync();
     }

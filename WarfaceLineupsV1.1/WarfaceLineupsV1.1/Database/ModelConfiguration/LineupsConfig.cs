@@ -12,5 +12,6 @@ public class LineupsConfig : IEntityTypeConfiguration<Lineup>
         builder.HasOne<Account>(l => l.Owner);
         builder.HasOne<Map>(l=>l.TypeMap);
         builder.HasMany<Comment>(l=>l.Comments);
+        builder.HasMany<Screenshot>(l=>l.Screenshots);
     }
 }

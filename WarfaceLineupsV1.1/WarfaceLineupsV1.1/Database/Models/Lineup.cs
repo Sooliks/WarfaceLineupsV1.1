@@ -14,6 +14,7 @@ public class Lineup
     public byte[] Preview { get; set; }
     public Account Owner { get; set; }
     public List<Comment> Comments { get; set; }
+    public List<Screenshot> Screenshots { get; set; }
 
     public Lineup()
     {
@@ -32,5 +33,6 @@ public class Lineup
         this.Preview = preview;
         this.Owner = owner;
         this.Comments = new List<Comment>();
+        this.Screenshots = new List<Screenshot>();
     }
 }

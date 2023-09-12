@@ -22,4 +22,10 @@ public class HandlerMaps
             db.SaveChangesAsync();
         }
     }
+
+    public static Map GetMapById(int id)
+    {
+        using Context db = new Context();
+        return db.Maps.FirstOrDefault(m => m.Id == id);
+    }
 }
