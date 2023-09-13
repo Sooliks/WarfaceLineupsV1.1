@@ -10,24 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3c00a32-c452-4a46-9ea6-a137b0d35059" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/ModelConfiguration/ScreenshotsConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Screenshot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerScreenshots.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Models/AddLineupData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/http/api/CommentsAPI.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/http/api/LineupsAPI.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/http/api/MapsAPI.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/http/api/NewsAPI.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/http/api/NotificationsAPI.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/http/api/ReportsAPI.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/http/api/UserAPI.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/types/lineups.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/LineupsControllers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/LineupsControllers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Context.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Context.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Account.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Account.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Lineup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Lineup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerLineups.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerLineups.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/http/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/http/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/http/api/LineupsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/http/api/LineupsAPI.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +25,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/evgen/OneDrive/Рабочий стол/Projects/web-sites/warfacelineups-v.1.1/WarfaceLineupsV1.1/WarfaceLineupsV1.1/Database/ModelConfiguration/CommentsConfig.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/evgen/OneDrive/Рабочий стол/Projects/web-sites/warfacelineups-v.1.1/WarfaceLineupsV1.1/WarfaceLineupsV1.1/Database/ModelConfiguration/LineupsConfig.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/evgen/OneDrive/Рабочий стол/Projects/web-sites/warfacelineups-v.1.1/WarfaceLineupsV1.1/WarfaceLineupsV1.1/Controllers/LineupsControllers.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2Uhdz6GsKUd8H8UKQ8JGn59eVW7" />
@@ -141,7 +127,9 @@
       <workItem from="1694260031429" duration="10908000" />
       <workItem from="1694339378678" duration="17929000" />
       <workItem from="1694426318997" duration="7755000" />
-      <workItem from="1694519208271" duration="6799000" />
+      <workItem from="1694519208271" duration="9955000" />
+      <workItem from="1694545723105" duration="1387000" />
+      <workItem from="1694603146956" duration="3093000" />
     </task>
     <task id="LOCAL-00001" summary="fhfhfh">
       <option name="closed" value="true" />
@@ -303,7 +291,23 @@
       <option name="project" value="LOCAL" />
       <updated>1694360233661</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="FHFHFH">
+      <option name="closed" value="true" />
+      <created>1694535801412</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1694535801412</updated>
+    </task>
+    <task id="LOCAL-00022" summary="jgjg">
+      <option name="closed" value="true" />
+      <created>1694539176834</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1694539176834</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,6 +335,8 @@
     <MESSAGE value="gjgjjg" />
     <MESSAGE value="fhfhfhhf" />
     <MESSAGE value="FJGJGJ" />
-    <option name="LAST_COMMIT_MESSAGE" value="FJGJGJ" />
+    <MESSAGE value="FHFHFH" />
+    <MESSAGE value="jgjg" />
+    <option name="LAST_COMMIT_MESSAGE" value="jgjg" />
   </component>
 </project>

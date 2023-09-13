@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using WarfaceLineupsV1._1.Database.Models;
 using WarfaceLineupsV1._1.Models;
 
@@ -92,7 +93,8 @@ public static class HandlerLineups
     public static List<Lineup> GetVerifiedLineups(FilterForLineupsData filterForLineupsData, int minId, int count)
     {
         using Context db = new Context();
-        return db.Lineups.OrderByDescending(v=>v.Id).Where(v=> (v.TypeSide == filterForLineupsData.TypeSide || filterForLineupsData.TypeSide == 10) && (v.TypeFeature == filterForLineupsData.TypeFeature || filterForLineupsData.TypeFeature == 10) && (v.TypeMap.Id == filterForLineupsData.TypeGameMap || filterForLineupsData.TypeGameMap == 10) && (v.TypePlant == filterForLineupsData.TypePlant || filterForLineupsData.TypePlant == 10) && (v.Title.ToLower().StartsWith(filterForLineupsData.Search.ToLower()) || v.Title == "") && v.IsVerified == true).Skip(minId).Take(count).ToList();
+        
+        return db.Lineups.OrderByDescending(v=>v.Id).Where(v=> (v.TypeSide == filterForLineupsData.TypeSide || filterForLineupsData.TypeSide == 10) && (v.TypeFeature == filterForLineupsData.TypeFeature || filterForLineupsData.TypeFeature == 10) && (v.TypeMap.Id == filterForLineupsData.TypeGameMap || filterForLineupsData.TypeGameMap == 10) && (v.TypePlant == filterForLineupsData.TypePlant || filterForLineupsData.TypePlant == 10) && (v.Title.ToLower().StartsWith(filterForLineupsData.Search.ToLower()) || v.Title == "") && v.IsVerified == true).Skip(minId).Take(count).Include(v=>v.TypeMap).ToList();
     }
     public static List<Lineup> GetUnVerifiedLineups(FilterForLineupsData filterForLineupsData, int minId, int count)
     {

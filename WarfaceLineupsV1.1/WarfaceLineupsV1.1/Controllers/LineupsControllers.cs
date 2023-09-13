@@ -12,7 +12,8 @@ public class LineupsControllers : Controller
     {
         const int countVideosOnOnePage = 8;
         int minId = (page * countVideosOnOnePage) - countVideosOnOnePage;
-        return Results.Json(HandlerLineups.GetVerifiedLineups(filterForLineupsData, minId, countVideosOnOnePage));
+        var lineups = HandlerLineups.GetVerifiedLineups(filterForLineupsData, minId, countVideosOnOnePage);
+        return Results.Json(lineups.Select(l => new { Id = l.Id, Title = l.Title, Description = l.Description, IsVerified = l.IsVerified, UrlOnVideo = l.UrlOnVideo, TypeMap = l.TypeMap.Id, TypeSide = l.TypeSide, TypeFeature = l.TypeFeature, TypePlant = l.TypePlant }).ToList());
     }
     [AuthorizeAdminByJwt]
     [HttpGet("api/unverifiedlineups")]
