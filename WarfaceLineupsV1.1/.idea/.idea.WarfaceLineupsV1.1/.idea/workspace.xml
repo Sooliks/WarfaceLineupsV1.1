@@ -10,11 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3c00a32-c452-4a46-9ea6-a137b0d35059" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/types/lineups.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/LineupsControllers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/LineupsControllers.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerLineups.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerLineups.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/http/api/LineupsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/http/api/LineupsAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/http/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/http/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/types/lineups.ts" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/types/lineups.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +129,7 @@
       <workItem from="1694426318997" duration="7755000" />
       <workItem from="1694519208271" duration="9955000" />
       <workItem from="1694545723105" duration="1387000" />
-      <workItem from="1694603146956" duration="3093000" />
+      <workItem from="1694603146956" duration="8007000" />
     </task>
     <task id="LOCAL-00001" summary="fhfhfh">
       <option name="closed" value="true" />
@@ -307,7 +307,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694539176834</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="fhfhfh">
+      <option name="closed" value="true" />
+      <created>1694608190356</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1694608190356</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,7 +325,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="fhhf" />
-    <MESSAGE value="fhfhfh" />
     <MESSAGE value="fgfhfh" />
     <MESSAGE value="khjkh" />
     <MESSAGE value="khk" />
@@ -337,6 +344,7 @@
     <MESSAGE value="FJGJGJ" />
     <MESSAGE value="FHFHFH" />
     <MESSAGE value="jgjg" />
-    <option name="LAST_COMMIT_MESSAGE" value="jgjg" />
+    <MESSAGE value="fhfhfh" />
+    <option name="LAST_COMMIT_MESSAGE" value="fhfhfh" />
   </component>
 </project>
