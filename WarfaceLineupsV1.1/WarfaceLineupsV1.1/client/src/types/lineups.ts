@@ -1,4 +1,4 @@
-export type LineupsType = {
+export type LineupType = {
     title: string
     description: string
     isVerified: boolean

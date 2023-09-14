@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, {InternalAxiosRequestConfig} from "axios";
 import {Config} from "../conf";
 import {cookies} from "../data/cookies";
 
@@ -9,7 +9,7 @@ const $clientAuth = axios.create({
     baseURL: Config.isDevelopment ? 'http://localhost:5258/api' : '/api'
 })
 
-const authInterceptor = (config: any) => {
+const authInterceptor = (config: InternalAxiosRequestConfig) => {
     config.headers.authorization = `${cookies.get('jwt')}`;
     config.headers.login = `${cookies.get('login')}`
     return config;
