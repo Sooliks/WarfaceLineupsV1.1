@@ -39,32 +39,32 @@ public class CommentsController : Controller
     
     [AuthorizeByJwt]
     [HttpDelete("api/deletecomment/user")]
-    public async Task<IResult> DeleteCommentUser([FromBody]DeleteCommentData deleteCommentData)
+    public async Task<IResult> DeleteCommentUser(int id)
     {
         var account = HandlerAccounts.GetAccountByLogin(Request.Headers["login"]);
-        if (HandlerComments.IsAccountOwnerComment(account, deleteCommentData.IdComment))
+        if (HandlerComments.IsAccountOwnerComment(account, id))
         {
-            HandlerComments.DeleteComment(deleteCommentData.IdComment);
+            HandlerComments.DeleteComment(id);
             return Results.Ok();
         }
         return Results.BadRequest();
     }
     [AuthorizeAdminByJwt]
     [HttpDelete("api/deletecomment/admin")]
-    public async Task<IResult> DeleteCommentAdmin([FromBody]DeleteCommentData deleteCommentData)
+    public async Task<IResult> DeleteCommentAdmin(int id)
     {
-        HandlerComments.DeleteComment(deleteCommentData.IdComment);
+        HandlerComments.DeleteComment(id);
         return Results.Ok();
     }
     
     [AuthorizeByJwt]
     [HttpDelete("api/deletecomment/ownerlineup")]
-    public async Task<IResult> DeleteCommentOwnerLineup([FromBody]DeleteCommentData deleteCommentData)
+    public async Task<IResult> DeleteCommentOwnerLineup(int id)
     {
         var account = HandlerAccounts.GetAccountByLogin(Request.Headers["login"]);
-        if (HandlerComments.IsCommentBelongToAccount(account,deleteCommentData.IdComment))
+        if (HandlerComments.IsCommentBelongToAccount(account,id))
         {
-            HandlerComments.DeleteComment(deleteCommentData.IdComment);
+            HandlerComments.DeleteComment(id);
             return Results.Ok();
         }
 
