@@ -96,10 +96,10 @@ public static class HandlerLineups
         
         return db.Lineups.OrderByDescending(v=>v.Id).Where(v=> (v.TypeSide == filterForLineupsData.TypeSide || filterForLineupsData.TypeSide == 10) && (v.TypeFeature == filterForLineupsData.TypeFeature || filterForLineupsData.TypeFeature == 10) && (v.TypeMap.Id == filterForLineupsData.TypeGameMap || filterForLineupsData.TypeGameMap == 10) && (v.TypePlant == filterForLineupsData.TypePlant || filterForLineupsData.TypePlant == 10) && (v.Title.ToLower().StartsWith(filterForLineupsData.Search.ToLower()) || v.Title == "") && v.IsVerified == true).Skip(minId).Take(count).Include(v=>v.TypeMap).ToList();
     }
-    public static List<Lineup> GetUnVerifiedLineups(FilterForLineupsData filterForLineupsData, int minId, int count)
+    public static List<Lineup> GetUnVerifiedLineups(int minId, int count)
     {
         using Context db = new Context();
-        return db.Lineups.OrderByDescending(v=>v.Id).Where(v=> (v.TypeSide == filterForLineupsData.TypeSide || filterForLineupsData.TypeSide == 10) && (v.TypeFeature == filterForLineupsData.TypeFeature || filterForLineupsData.TypeFeature == 10) && (v.TypeMap.Id == filterForLineupsData.TypeGameMap || filterForLineupsData.TypeGameMap == 10) && (v.TypePlant == filterForLineupsData.TypePlant || filterForLineupsData.TypePlant == 10) && (v.Title.ToLower().StartsWith(filterForLineupsData.Search.ToLower()) || v.Title == "") && v.IsVerified == false).Skip(minId).Take(count).Include(v=>v.TypeMap).ToList();
+        return db.Lineups.OrderByDescending(v=>v.Id).Where(v=> v.IsVerified == false).Skip(minId).Take(count).Include(v=>v.TypeMap).ToList();
     }
     public static List<Lineup> GetVerifiedLineupsByOwnerId(FilterForLineupsData filterForLineupsData, int minId, int count, int ownerId)
     {

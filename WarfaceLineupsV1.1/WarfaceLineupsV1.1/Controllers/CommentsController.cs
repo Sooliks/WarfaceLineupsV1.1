@@ -14,13 +14,14 @@ public class CommentsController : Controller
         var login = Request.Headers["login"];
         var account = HandlerAccounts.GetAccountByLogin(login);
         HandlerComments.AddNewComment(account,addCommentData.IdLineup,addCommentData.Text);
-        return Results.Json(new {message = "success", comments = HandlerComments.GetAllCommentsByLineupIdAndPage(addCommentData.IdLineup,1)});
+        return Results.Json(HandlerComments.GetAllCommentsByLineupIdAndPage(addCommentData.IdLineup,1));
     }
 
     [HttpGet("api/comments")]
     public async Task<IResult> GetComments(int lineupId, int page)
     {
-        return Results.Json(HandlerComments.GetAllCommentsByLineupIdAndPage(lineupId, page));
+        var comments = HandlerComments.GetAllCommentsByLineupIdAndPage(lineupId, page);
+        return Results.Json(comments.Select(c=>new {Id = c.Id, OwnerLogin = c.Owner.Login, OwnerId = c.Owner.Id, Text = c.Text}).ToList());
     }
     
     [AuthorizeByJwt]

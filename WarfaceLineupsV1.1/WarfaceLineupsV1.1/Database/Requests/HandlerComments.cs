@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using WarfaceLineupsV1._1.Database.Models;
 
 namespace WarfaceLineupsV1._1.Database.Requests;
@@ -55,6 +56,6 @@ public static class HandlerComments
         using Context db = new Context();
         const int countCommentsOnOnePage = 8;
         int minId = (page * countCommentsOnOnePage) - countCommentsOnOnePage;
-        return db.Comments.OrderByDescending(c=>c.Id).Where(c=>c.Lineup.Id == lineupId).Skip(minId).Take(countCommentsOnOnePage).ToList();
+        return db.Comments.OrderByDescending(c=>c.Id).Where(c=>c.Lineup.Id == lineupId).Include(c=>c.Owner).Skip(minId).Take(countCommentsOnOnePage).ToList();
     }
 }

@@ -18,12 +18,11 @@ public class LineupsControllers : Controller
     }
     [AuthorizeAdminByJwt]
     [HttpGet("api/unverifiedlineups")]
-    public async Task<IResult> GetUnVerifiedLineups(int page, FilterForLineupsData filterForLineupsData)
+    public async Task<IResult> GetUnVerifiedLineups(int page)
     {
         const int countVideosOnOnePage = 8;
         int minId = (page * countVideosOnOnePage) - countVideosOnOnePage;
-        if (filterForLineupsData.Search == null) filterForLineupsData.Search = "";
-        var lineups = HandlerLineups.GetUnVerifiedLineups(filterForLineupsData, minId, countVideosOnOnePage);
+        var lineups = HandlerLineups.GetUnVerifiedLineups(minId, countVideosOnOnePage);
         return Results.Json(lineups.Select(l => new { Id = l.Id, Title = l.Title, Description = l.Description, IsVerified = l.IsVerified, UrlOnVideo = l.UrlOnVideo, TypeMap = l.TypeMap.Id, TypeSide = l.TypeSide, TypeFeature = l.TypeFeature, TypePlant = l.TypePlant }).ToList());
 
     }
@@ -50,7 +49,7 @@ public class LineupsControllers : Controller
     }
     [AuthorizeAdminByJwt]
     [HttpDelete("api/deletelineup/admin")]
-    public async Task<IResult> DeleteLineup([FromBody]int lineupId)
+    public async Task<IResult> DeleteLineup(int lineupId)
     {
         var adminAccount = HandlerAccounts.GetAccountByLogin(Request.Headers["login"]);
         var lineup = HandlerLineups.GetLineupByLineupId(lineupId);
@@ -60,7 +59,7 @@ public class LineupsControllers : Controller
     }
     [AuthorizeByJwt]
     [HttpDelete("api/deletelineup/user")]
-    public async Task<IResult> DeleteLineupUser([FromBody]int lineupId)
+    public async Task<IResult> DeleteLineupUser(int lineupId)
     {
         var account = HandlerAccounts.GetAccountByLogin(Request.Headers["login"]);
         var lineup = HandlerLineups.GetLineupByLineupId(lineupId);
