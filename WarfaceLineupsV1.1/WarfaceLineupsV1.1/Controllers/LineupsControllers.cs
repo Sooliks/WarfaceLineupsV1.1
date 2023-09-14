@@ -12,6 +12,7 @@ public class LineupsControllers : Controller
     {
         const int countVideosOnOnePage = 8;
         int minId = (page * countVideosOnOnePage) - countVideosOnOnePage;
+        if (filterForLineupsData.Search == null) filterForLineupsData.Search = "";
         var lineups = HandlerLineups.GetVerifiedLineups(filterForLineupsData, minId, countVideosOnOnePage);
         return Results.Json(lineups.Select(l => new { Id = l.Id, Title = l.Title, Description = l.Description, IsVerified = l.IsVerified, UrlOnVideo = l.UrlOnVideo, TypeMap = l.TypeMap.Id, TypeSide = l.TypeSide, TypeFeature = l.TypeFeature, TypePlant = l.TypePlant }).ToList());
     }
@@ -21,14 +22,19 @@ public class LineupsControllers : Controller
     {
         const int countVideosOnOnePage = 8;
         int minId = (page * countVideosOnOnePage) - countVideosOnOnePage;
-        return Results.Json(HandlerLineups.GetUnVerifiedLineups(filterForLineupsData, minId, countVideosOnOnePage));
+        if (filterForLineupsData.Search == null) filterForLineupsData.Search = "";
+        var lineups = HandlerLineups.GetUnVerifiedLineups(filterForLineupsData, minId, countVideosOnOnePage);
+        return Results.Json(lineups.Select(l => new { Id = l.Id, Title = l.Title, Description = l.Description, IsVerified = l.IsVerified, UrlOnVideo = l.UrlOnVideo, TypeMap = l.TypeMap.Id, TypeSide = l.TypeSide, TypeFeature = l.TypeFeature, TypePlant = l.TypePlant }).ToList());
+
     }
     [HttpGet("api/verifiedlineupsbyownerid")]
     public async Task<IResult> GetVerifiedLineupsByOwner(int ownerId,int page, FilterForLineupsData filterForLineupsData)
     {
         const int countVideosOnOnePage = 8;
         int minId = (page * countVideosOnOnePage) - countVideosOnOnePage;
-        return Results.Json(HandlerLineups.GetVerifiedLineupsByOwnerId(filterForLineupsData, minId, countVideosOnOnePage, ownerId));
+        if (filterForLineupsData.Search == null) filterForLineupsData.Search = "";
+        var lineups = HandlerLineups.GetVerifiedLineupsByOwnerId(filterForLineupsData, minId, countVideosOnOnePage, ownerId);
+        return Results.Json(lineups.Select(l => new { Id = l.Id, Title = l.Title, Description = l.Description, IsVerified = l.IsVerified, UrlOnVideo = l.UrlOnVideo, TypeMap = l.TypeMap.Id, TypeSide = l.TypeSide, TypeFeature = l.TypeFeature, TypePlant = l.TypePlant }).ToList());
     }
     [AuthorizeByJwt]
     [HttpGet("api/lineupsbyowner")]
@@ -37,7 +43,10 @@ public class LineupsControllers : Controller
         var account = HandlerAccounts.GetAccountByLogin(Request.Headers["login"]);
         const int countVideosOnOnePage = 8;
         int minId = (page * countVideosOnOnePage) - countVideosOnOnePage;
-        return Results.Json(HandlerLineups.GetAllLineupsByOwnerId(filterForLineupsData, minId, countVideosOnOnePage, account.Id));
+        if (filterForLineupsData.Search == null) filterForLineupsData.Search = "";
+        var lineups =HandlerLineups.GetAllLineupsByOwnerId(filterForLineupsData, minId, countVideosOnOnePage, account.Id);
+        return Results.Json(lineups.Select(l => new { Id = l.Id, Title = l.Title, Description = l.Description, IsVerified = l.IsVerified, UrlOnVideo = l.UrlOnVideo, TypeMap = l.TypeMap.Id, TypeSide = l.TypeSide, TypeFeature = l.TypeFeature, TypePlant = l.TypePlant }).ToList());
+
     }
     [AuthorizeAdminByJwt]
     [HttpDelete("api/deletelineup/admin")]
@@ -79,10 +88,14 @@ public class LineupsControllers : Controller
 
     [AuthorizeByJwt]
     [HttpPost("api/addlineup")]
-    public async Task<IResult> AddLineup([FromBody]AddLineupData addLineupData)
+    public async Task<IResult> AddLineup([FromForm]AddLineupData addLineupData)
     {
         IFormFileCollection files = Request.Form.Files;
         var account = HandlerAccounts.GetAccountByLogin(Request.Headers["login"]);
+        if (files.Count > 4)
+        {
+            return Results.BadRequest("Кол-во скринов должно быть не больше 4-х");
+        }
         if (files.Count is 0)
         {
             HandlerLineups.AddNewLineup(addLineupData.Title, addLineupData.Description, addLineupData.UrlOnVideo, HandlerMaps.GetMapById(addLineupData.TypeGameMap), addLineupData.TypeSide, addLineupData.TypeFeature, addLineupData.TypePlant, account);
