@@ -22,4 +22,10 @@ public class MapsControllers : Controller
         HandlerMaps.UpdateMap(updateMapData.Id, updateMapData.Name);
         return Results.Ok();
     }
+
+    [HttpGet("api/maps")]
+    public async Task<IResult> GetMaps()
+    {
+        return Results.Json(HandlerMaps.GetAllMaps());
+    }
 }
