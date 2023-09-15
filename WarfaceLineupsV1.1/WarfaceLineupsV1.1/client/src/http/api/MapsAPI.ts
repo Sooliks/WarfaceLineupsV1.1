@@ -1,5 +1,5 @@
 import {AxiosResponse} from "axios";
-import {$clientAuth} from "../index";
+import {$client, $clientAuth} from "../index";
 import {MapType} from "../../types/map";
 
 export namespace MapsAPI {
@@ -10,7 +10,7 @@ export namespace MapsAPI {
         return await $clientAuth.post('/updatemap', {id, name});
     }
     export const getMaps = async (): Promise<MapType[]> =>{
-        const {data} = await $clientAuth.get<MapType[]>('/maps')
+        const {data} = await $client.get<MapType[]>('/maps')
         return data;
     }
 }
