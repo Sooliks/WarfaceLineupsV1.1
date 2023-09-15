@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using WarfaceLineupsV1._1.Database.Models;
 
 namespace WarfaceLineupsV1._1.Database.Requests;
@@ -7,7 +8,7 @@ public class HandlerReports
     public static List<Report> GetExpectedReportsList()
     {
         using Context db = new Context();
-        return db.Reports.Where(r => r.Status == "expected").ToList();
+        return db.Reports.Where(r => r.Status == "expected").Include(r=>r.Sender).Include(r=>r.Lineup).ToList();
     }
     public static bool AddNewReport(Account sender,Lineup lineup, string typeReport)
     {

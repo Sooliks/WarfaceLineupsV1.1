@@ -12,11 +12,12 @@ public class NotificationsControllers : Controller
     public async Task<IResult> GetNotifications()
     {
         var account = HandlerAccounts.GetAccountByLogin(Request.Headers["login"]);
-        return Results.Json(HandlerNotifications.GetNotificationsByRecipientAccount(account));
+        var notifications = HandlerNotifications.GetNotificationsByRecipientAccount(account);
+        return Results.Json(notifications.Select(n=>new{Id = n.Id, Title = n.Title, Text = n.Text}));
     }
     [AuthorizeByJwt]
     [HttpDelete("api/deletenotification")]
-    public async Task<IResult> DeleteNotification([FromBody]int id)
+    public async Task<IResult> DeleteNotification(int id)
     {
         try
         {

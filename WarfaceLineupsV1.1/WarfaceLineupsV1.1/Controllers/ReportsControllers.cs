@@ -36,7 +36,16 @@ public class ReportsControllers : Controller
     [HttpGet("api/reports")]
     public async Task<IResult> GetReports()
     {
-        return Results.Json(HandlerReports.GetExpectedReportsList());
+        var reports = HandlerReports.GetExpectedReportsList();
+        return Results.Json(
+            reports.Select(r=>new
+            {
+                Id = r.Id,
+                Status = r.Status,
+                SenderLogin = r.Sender.Login,
+                Lineup = new { Id = r.Lineup.Id, Title = r.Lineup.Title, Description = r.Lineup.Description, IsVerified = r.Lineup.IsVerified, UrlOnVideo = r.Lineup.UrlOnVideo, TypeMap = r.Lineup.TypeMap.Id, TypeSide = r.Lineup.TypeSide, TypeFeature = r.Lineup.TypeFeature, TypePlant = r.Lineup.TypePlant },
+                TypeReport = r.TypeReport
+            }));
     }
     [AuthorizeAdminByJwt]
     [HttpPost("api/setcompletereport")]
