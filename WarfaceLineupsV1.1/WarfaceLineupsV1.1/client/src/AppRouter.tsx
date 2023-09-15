@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Route, Routes, useLocation, useNavigate} from "react-router-dom";
 import Profile from "./pages/Profile";
 import Lineups from "./pages/Lineups";
@@ -9,11 +9,10 @@ import {Layout, Menu, Button, theme, MenuProps, Typography, Affix} from 'antd';
 import {
     MenuFoldOutlined,
     MenuUnfoldOutlined,
-    UploadOutlined,
     UserOutlined,
-    VideoCameraOutlined
 } from "@ant-design/icons";
 import {Config} from "./conf";
+import {useNavigationContext} from "./context/NavigationContextProvider";
 type MenuItem = Required<MenuProps>['items'][number];
 const {Text} = Typography;
 const { Header, Sider, Content, Footer } = Layout;
@@ -36,17 +35,23 @@ function getItem(
 }
 
 const AppRouter: React.FC = () => {
+    const location = useLocation();
     const navigate = useNavigate();
+    const navigationContext = useNavigationContext();
     const [collapsed, setCollapsed] = useState(false);
     const {
         token: { colorBgContainer },
     } = theme.useToken();
     const onClick: MenuProps['onClick'] = (e) => {
         navigate(e.key);
+        navigationContext.setNavigation({currentPage: e.key});
     };
     const items: MenuItem[] = [
-        getItem('Профиль', '1', <UserOutlined />),
+        getItem('Профиль', '/profile', <UserOutlined />),
     ];
+    useEffect(()=>{
+        navigationContext.setNavigation({currentPage: location.pathname});
+    },[])
 
     return (
         <Layout style={{height: Config.screenResolution.height,margin: 0}}>
@@ -56,26 +61,27 @@ const AppRouter: React.FC = () => {
                     <Menu
                         theme="dark"
                         mode="inline"
-                        defaultSelectedKeys={['1']}
+                        defaultSelectedKeys={['start']}
                         items={items}
                         onClick={onClick}
+                        selectedKeys={[navigationContext.navigation.currentPage]}
                     />
                 </Sider>
             </Affix>
             <Layout>
                 <Affix>
-                <Header style={{ padding: 0, background: colorBgContainer }}>
-                    <Button
-                        type="text"
-                        icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-                        onClick={() => setCollapsed(!collapsed)}
-                        style={{
-                            fontSize: '16px',
-                            width: 64,
-                            height: 64,
-                        }}
-                    />
-                </Header>
+                    <Header style={{ padding: 0, background: colorBgContainer }}>
+                        <Button
+                            type="text"
+                            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+                            onClick={() => setCollapsed(!collapsed)}
+                            style={{
+                                fontSize: '16px',
+                                width: 64,
+                                height: 64,
+                            }}
+                        />
+                    </Header>
                 </Affix>
                 <Content
                     style={{
