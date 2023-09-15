@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes, useLocation, useNavigate} from "react-router-dom";
 import Profile from "./pages/Profile";
 import Lineups from "./pages/Lineups";
 import Premium from "./pages/Premium";
 import News from "./pages/News";
 import Start from "./pages/Start";
-import {Layout, Menu, Button, theme, MenuProps, Typography} from 'antd';
+import {Layout, Menu, Button, theme, MenuProps, Typography, Affix} from 'antd';
 import {
     MenuFoldOutlined,
     MenuUnfoldOutlined,
@@ -18,9 +18,7 @@ type MenuItem = Required<MenuProps>['items'][number];
 const {Text} = Typography;
 const { Header, Sider, Content, Footer } = Layout;
 
-const items: MenuItem[] = [
-    getItem('Профиль', '1', <UserOutlined />),
-];
+
 function getItem(
     label: React.ReactNode,
     key: React.Key,
@@ -38,24 +36,34 @@ function getItem(
 }
 
 const AppRouter: React.FC = () => {
-
+    const navigate = useNavigate();
     const [collapsed, setCollapsed] = useState(false);
     const {
         token: { colorBgContainer },
     } = theme.useToken();
+    const onClick: MenuProps['onClick'] = (e) => {
+        navigate(e.key);
+    };
+    const items: MenuItem[] = [
+        getItem('Профиль', '1', <UserOutlined />),
+    ];
 
     return (
         <Layout style={{height: Config.screenResolution.height,margin: 0}}>
-            <Sider trigger={null} collapsible collapsed={collapsed}>
-                <div className="demo-logo" />
-                <Menu
-                    theme="dark"
-                    mode="inline"
-                    defaultSelectedKeys={['1']}
-                    items={items}
-                />
-            </Sider>
+            <Affix>
+                <Sider trigger={null} collapsible collapsed={collapsed} style={{height: Config.screenResolution.height,margin: 0}}>
+                    <div className="demo-logo" />
+                    <Menu
+                        theme="dark"
+                        mode="inline"
+                        defaultSelectedKeys={['1']}
+                        items={items}
+                        onClick={onClick}
+                    />
+                </Sider>
+            </Affix>
             <Layout>
+                <Affix>
                 <Header style={{ padding: 0, background: colorBgContainer }}>
                     <Button
                         type="text"
@@ -68,6 +76,7 @@ const AppRouter: React.FC = () => {
                         }}
                     />
                 </Header>
+                </Affix>
                 <Content
                     style={{
                         margin: '24px 16px',
@@ -78,12 +87,11 @@ const AppRouter: React.FC = () => {
                 >
                     <Routes>
                         <Route path={"/profile"} element={<Profile/>}/>
-                        <Route path={"/lineups"} element={<Lineups/>}></Route>
+                        <Route path={"/lineups"} element={<Lineups/>}/>
                         <Route path={"/premium"} element={<Premium/>}/>
                         <Route path={"/news"} element={<News/>}/>
                         <Route path={"/"} element={<Start/>}/>
                     </Routes>
-                    fgfg
                 </Content>
                 <Footer style={{ textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: 15}}>
                     <Text>
