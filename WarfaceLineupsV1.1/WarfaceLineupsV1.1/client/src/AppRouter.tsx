@@ -5,7 +5,7 @@ import Lineups from "./pages/Lineups";
 import Premium from "./pages/Premium";
 import News from "./pages/News";
 import Start from "./pages/Start";
-import {Layout, Menu, Button, theme, MenuProps, Typography, Affix} from 'antd';
+import {Layout, Menu, Button, theme, MenuProps, Typography, Affix, Space} from 'antd';
 import {
     CrownOutlined, FileDoneOutlined,
     MenuFoldOutlined,
@@ -60,7 +60,7 @@ const AppRouter: React.FC = () => {
     return (
         <Layout style={{height: Config.screenResolution.height,margin: 0}}>
             <Affix>
-                <Sider trigger={null} collapsible collapsed={collapsed} style={{height: Config.screenResolution.height,margin: 0}}>
+                <Sider trigger={null} collapsible collapsed={collapsed} style={{minHeight: Config.screenResolution.height,margin: 0}}>
                     <div className="demo-logo" style={{maxWidth: 200, height: 64, padding: '6px 4px 6px 4px'}}>
                         <div style={{width: '100%', height: '100%', backgroundColor: 'rgba(255,255,255,.2)', borderRadius: '10px'}}></div>
                     </div>
@@ -93,8 +93,9 @@ const AppRouter: React.FC = () => {
                     style={{
                         margin: '24px 16px',
                         padding: 24,
-                        minHeight: 280,
+                        minHeight: 300,
                         background: colorBgContainer,
+                        display: 'flex'
                     }}
                 >
                     <Routes>
