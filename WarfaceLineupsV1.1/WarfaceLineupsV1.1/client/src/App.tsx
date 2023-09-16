@@ -25,7 +25,8 @@ function App() {
                 userContext.setUser(defaultUser)
             }
         }).catch((e)=>{
-
+            setLoading(false);
+            userContext.setUser(defaultUser)
         })
     },[])
     if(loading){

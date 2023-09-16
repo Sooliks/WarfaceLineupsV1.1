@@ -7,14 +7,15 @@ import News from "./pages/News";
 import Start from "./pages/Start";
 import {Layout, Menu, Button, theme, MenuProps, Typography, Affix} from 'antd';
 import {
+    CrownOutlined, FileDoneOutlined,
     MenuFoldOutlined,
     MenuUnfoldOutlined,
-    UserOutlined,
+    UserOutlined, VideoCameraOutlined,
 } from "@ant-design/icons";
 import {Config} from "./conf";
 import {useNavigationContext} from "./context/NavigationContextProvider";
 type MenuItem = Required<MenuProps>['items'][number];
-const {Text} = Typography;
+const {Text,Link} = Typography;
 const { Header, Sider, Content, Footer } = Layout;
 
 
@@ -48,6 +49,9 @@ const AppRouter: React.FC = () => {
     };
     const items: MenuItem[] = [
         getItem('Профиль', '/profile', <UserOutlined />),
+        getItem('Lineups', '/lineups', <VideoCameraOutlined />),
+        getItem('Premium', '/premium', <CrownOutlined />),
+        getItem('Новости', '/news', <FileDoneOutlined/>),
     ];
     useEffect(()=>{
         navigationContext.setNavigation({currentPage: location.pathname});
@@ -57,7 +61,9 @@ const AppRouter: React.FC = () => {
         <Layout style={{height: Config.screenResolution.height,margin: 0}}>
             <Affix>
                 <Sider trigger={null} collapsible collapsed={collapsed} style={{height: Config.screenResolution.height,margin: 0}}>
-                    <div className="demo-logo" />
+                    <div className="demo-logo" style={{maxWidth: 200, height: 64, padding: '6px 4px 6px 4px'}}>
+                        <div style={{width: '100%', height: '100%', backgroundColor: 'rgba(255,255,255,.2)', borderRadius: '10px'}}></div>
+                    </div>
                     <Menu
                         theme="dark"
                         mode="inline"
@@ -100,9 +106,7 @@ const AppRouter: React.FC = () => {
                     </Routes>
                 </Content>
                 <Footer style={{ textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: 15}}>
-                    <Text>
-                        Warface Lineups ©2023 Created by Sooliks
-                    </Text>
+                    <Text>Warface Lineups ©2023 Created by <Link href="https://t.me/soolikss" target="_blank">Sooliks</Link></Text>
                 </Footer>
             </Layout>
         </Layout>
