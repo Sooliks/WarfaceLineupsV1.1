@@ -19,7 +19,7 @@ const {Text,Link} = Typography;
 const { Header, Sider, Content, Footer } = Layout;
 
 
-function getItem(
+export function getItem(
     label: React.ReactNode,
     key: React.Key,
     icon?: React.ReactNode,
