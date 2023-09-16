@@ -1,4 +1,4 @@
-import axios, {InternalAxiosRequestConfig} from "axios";
+import axios, {AxiosResponse, InternalAxiosRequestConfig} from "axios";
 import {Config} from "../conf";
 import {cookies} from "../data/cookies";
 
@@ -15,7 +15,23 @@ const authInterceptor = (config: InternalAxiosRequestConfig) => {
     return config;
 }
 
+
 $clientAuth.interceptors.request.use(authInterceptor)
+$clientAuth.interceptors.response.use((res: AxiosResponse)=>{
+
+    return res;
+}, (error) => {
+    if (error.response.status === 401) {
+        window.location.reload();
+    }
+    return Promise.reject(error);
+})
+$client.interceptors.response.use((res: AxiosResponse)=>{
+
+    return res;
+}, (error) => {
+    return Promise.reject(error);
+})
 
 
 export {
