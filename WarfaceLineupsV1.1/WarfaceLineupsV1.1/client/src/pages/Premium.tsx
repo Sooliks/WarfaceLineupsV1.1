@@ -6,8 +6,8 @@ const { Text } = Typography;
 const Premium: React.FC = () => {
     const userContext = useUserContext();
     return (
-        <div style={{height: 900}}>
-            <Card style={{marginTop:20}}>
+        <div>
+            <Card style={{marginTop:20, marginBottom:20}}>
                 <Space direction={"vertical"}>
                     <h1 style={{textAlign: "center"}}>Преимущество премиум аккаунта</h1>
                     <Card style={{width:500, marginBottom:20}}>
