@@ -1,16 +1,29 @@
 import React, {useState} from 'react';
-import {Button, Form, Input} from "antd";
+import {Button, Form, Input, notification} from "antd";
 import {UserAPI} from "../../../http/api/UserAPI";
+import {AxiosError} from "axios";
+import {AccountType} from "../../../types/account";
+import {cookies} from "../../../data/cookies";
+import {useUserContext} from "../../../context/UserContextProvider";
 
 
 const Registration : React.FC = () => {
     const [loading,setLoading] = useState<boolean>(false)
+    const userContext = useUserContext();
     const onFinish = (values: any) => {
         setLoading(true);
         UserAPI.registration(values.login,values.email,values.password).then(res=>{
-            setLoading(false)
-        }).catch(()=>{
-
+            setLoading(false);
+            const data: AccountType = res.data;
+            cookies.set('jwt', data.jwtToken);
+            cookies.set('login', data.login);
+            userContext.setUser({account: data, isAuth: true})
+        }).catch((error: AxiosError)=>{
+            notification.error({
+                message: "Уведомление",
+                description: error.response!.data!.toString(),
+                placement: "top"
+            })
         })
     };
 

@@ -24,7 +24,7 @@ export const defaultUser: UserType = {
         isVerifiedAccount: null,
         isPremiumAccount: null
     },
-    isAuth: true
+    isAuth: false
 }
 
 const UserContextProvider = ({children}: UserContextProviderProps) => {
