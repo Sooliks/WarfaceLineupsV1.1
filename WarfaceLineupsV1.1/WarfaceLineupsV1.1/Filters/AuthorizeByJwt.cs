@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using WarfaceLineupsV1._1.Database.Requests;
 using WfTracker.Utils;
 
 namespace WarfaceLineupsV1._1.Filters;
@@ -17,6 +18,17 @@ public class AuthorizeByJwt : Attribute, IResourceFilter
         var login = context.HttpContext.Request.Headers["login"];
         
         if (!AuthService.CheckIsValidToken(jwtToken, login))
+        {
+            context.Result = new UnauthorizedResult();
+            return;
+        }
+        var account = HandlerAccounts.GetAccountByLogin(login);
+        if (account == null)
+        {
+            context.Result = new UnauthorizedResult();
+            return;
+        }
+        if (account.JwtToken != jwtToken)
         {
             context.Result = new UnauthorizedResult();
             return;

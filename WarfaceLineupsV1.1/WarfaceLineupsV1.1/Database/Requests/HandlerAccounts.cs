@@ -31,12 +31,12 @@ public static class HandlerAccounts
         if (Bcrypt.BCrypt.CheckPassword(password, account.Password)) return true;
         return false;
     }
-    public static Account Register(string login, string email, string password)
+    public static Account Register(string login, string email, string password, string jwtToken)
     {
         using (Context db = new Context())
         {
             string saltePassword = Bcrypt.BCrypt.HashPassword(password, Bcrypt.BCrypt.GenerateSalt());
-            var account = new Account(login, email, saltePassword);
+            var account = new Account(login, email, saltePassword,jwtToken);
             db.Accounts.Add(account);
             db.SaveChanges();
             return db.Accounts.FirstOrDefault(a=>a.Email == account.Email);
@@ -100,5 +100,13 @@ public static class HandlerAccounts
             return true;
         }
         return false;
+    }
+
+    public static void UpdateJwtToken(Account account, string newJwtToken)
+    {
+        using Context db = new Context();
+        account.JwtToken = newJwtToken;
+        db.Accounts.Update(account);
+        db.SaveChangesAsync();
     }
 }

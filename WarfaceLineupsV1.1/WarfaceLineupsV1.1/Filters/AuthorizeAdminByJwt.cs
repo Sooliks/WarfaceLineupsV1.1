@@ -23,7 +23,17 @@ public class AuthorizeAdminByJwt : Attribute, IResourceFilter
             return;
         }
         var account = HandlerAccounts.GetAccountByLogin(login);
+        if (account == null)
+        {
+            context.Result = new UnauthorizedResult();
+            return;
+        }
         if (account.Role != "admin")
+        {
+            context.Result = new UnauthorizedResult();
+            return;
+        }
+        if (account.JwtToken != jwtToken)
         {
             context.Result = new UnauthorizedResult();
             return;

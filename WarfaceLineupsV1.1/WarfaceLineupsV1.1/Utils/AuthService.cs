@@ -14,11 +14,11 @@ public class AuthService
     private static readonly string Audience = "MyAuthClient";
     private static SymmetricSecurityKey GetSymmetricSecurityKey() => new SymmetricSecurityKey(Encoding.UTF8.GetBytes(SecretString));
     
-    public static string GenerateJwtToken(Account account)
+    public static string GenerateJwtToken(string login)
     {
         var claims = new List<Claim>
         {
-            new Claim(ClaimTypes.Name, account.Login)
+            new Claim(ClaimTypes.Name, login)
         };
         var jwtToken = new JwtSecurityToken(
             issuer: Issuer,

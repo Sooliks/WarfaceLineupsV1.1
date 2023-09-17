@@ -12,6 +12,7 @@ public class Account
     public bool IsVerifiedAccount { get; set; } 
     public bool IsPremiumAccount { get; set; }
     public string VerificationCode { get; set; }
+    public string JwtToken { get; set; }
     public byte[] Avatar { get; set; }
     public List<Lineup> Lineups { get; set; }
     public List<Comment> Comments { get; set; }
@@ -21,7 +22,7 @@ public class Account
         
     }
 
-    public Account(string login, string email, string password)
+    public Account(string login, string email, string password, string jwtToken)
     {
         this.Login = login;
         this.Email = email;
@@ -30,6 +31,7 @@ public class Account
         this.IsVerifiedAccount = false;
         this.IsPremiumAccount = false;
         this.VerificationCode = "";
+        this.JwtToken = jwtToken;
         this.Avatar = new byte[] { };
         this.Lineups = new List<Lineup>();
         this.Comments = new List<Comment>();
