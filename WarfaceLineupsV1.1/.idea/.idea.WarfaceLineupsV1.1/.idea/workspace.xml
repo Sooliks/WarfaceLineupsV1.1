@@ -11,6 +11,15 @@
   <component name="ChangeListManager">
     <list default="true" id="b3c00a32-c452-4a46-9ea6-a137b0d35059" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/AccountsControllers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/AccountsControllers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/CommentsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Controllers/CommentsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Account.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Models/Account.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerAccounts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Database/Requests/HandlerAccounts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Filters/AuthorizeAdminByJwt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Filters/AuthorizeAdminByJwt.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Filters/AuthorizeByJwt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Filters/AuthorizeByJwt.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/Utils/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/Utils/AuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/AppRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/AppRouter.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +139,7 @@
       <workItem from="1694711579101" duration="11162000" />
       <workItem from="1694774015514" duration="9136000" />
       <workItem from="1694858281406" duration="346000" />
+      <workItem from="1694944955540" duration="5559000" />
     </task>
     <task id="LOCAL-00001" summary="fhfhfh">
       <option name="closed" value="true" />

@@ -18,6 +18,8 @@ function App() {
             if(res.status === 200){
                 userContext.setUser({...userContext.user, account: res.data})
                 userContext.setUser({...userContext.user, isAuth: true})
+                cookies.set('jwt', res.data.jwtToken);
+                cookies.set('login', res.data.login);
                 setLoading(false);
             }
             else {

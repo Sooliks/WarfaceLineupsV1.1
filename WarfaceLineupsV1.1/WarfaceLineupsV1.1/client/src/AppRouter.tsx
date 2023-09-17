@@ -58,7 +58,7 @@ const AppRouter: React.FC = () => {
     },[])
 
     return (
-        <Layout style={{height: Config.screenResolution.height,margin: 0}}>
+        <Layout style={{minHeight: Config.screenResolution.height,margin: 0}}>
             <Affix>
                 <Sider trigger={null} collapsible collapsed={collapsed} style={{minHeight: Config.screenResolution.height,margin: 0}}>
                     <div className="demo-logo" style={{maxWidth: 200, height: 64, padding: '6px 4px 6px 4px'}}>
