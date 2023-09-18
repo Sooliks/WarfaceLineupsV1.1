@@ -29,7 +29,7 @@ public static class HandlerLineups
     {
         using Context db = new Context();
         var lineup = new Lineup(title, description, null, map, typeSide, typeFeature, typePlant, null, owner);
-        
+        db.Entry(lineup).Collection(c=>c.Screenshots).Load();
         foreach (var screenshot in screenshots)
         {
             using (var ms = new MemoryStream())
