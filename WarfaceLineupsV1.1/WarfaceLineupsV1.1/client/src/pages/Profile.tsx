@@ -1,13 +1,22 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useUserContext} from "../context/UserContextProvider";
 import {Menu, MenuProps, Space} from "antd";
 import Auth from "../components/ui/auth/Auth";
 import {HeartOutlined, MailOutlined, SettingOutlined, VideoCameraOutlined} from "@ant-design/icons";
 import {getItem} from "../AppRouter";
+import {Route, Routes, useLocation, useNavigate} from "react-router-dom";
+import Lineups from "./pagesProfile/Lineups";
+import Settings from "./pagesProfile/Settings";
+import Favourites from "./pagesProfile/Favourites";
+import Notifications from "./pagesProfile/Notifications";
+import CreateLineup from "./pagesProfile/CreateLineup";
+
 
 const Profile: React.FC = () => {
     const userContext = useUserContext();
     const [current, setCurrent] = useState('lineups');
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const items: MenuProps['items'] = [
         getItem('Lineups', 'sub1', <VideoCameraOutlined />, [
@@ -30,7 +39,11 @@ const Profile: React.FC = () => {
             icon: <MailOutlined/>,
         },
     ]
+    useEffect(()=>{
+        setCurrent(location.pathname.split('/')[2])
+    },[])
     const onClick: MenuProps['onClick'] = (e) => {
+        navigate(e.key);
         setCurrent(e.key);
     };
     return (
@@ -38,13 +51,23 @@ const Profile: React.FC = () => {
             {!userContext.user.isAuth ?
                 <Auth/>
                 :
-                <Menu
-                    onClick={onClick}
-                    selectedKeys={[current]}
-                    mode="horizontal"
-                    items={items}
-                    defaultSelectedKeys={['lineups']}
-                />
+                <div>
+                    <Menu
+                        onClick={onClick}
+                        selectedKeys={[current]}
+                        mode="horizontal"
+                        items={items}
+                        defaultSelectedKeys={['lineups']}
+                        defaultValue={'lineups'}
+                    />
+                    <Routes>
+                        <Route path={"/lineups"} element={<Lineups/>}/>
+                        <Route path={"/settings"} element={<Settings/>}/>
+                        <Route path={"/favorites"} element={<Favourites/>}/>
+                        <Route path={"/notifications"} element={<Notifications/>}/>
+                        <Route path={"/addnewlineup"} element={<CreateLineup/>}/>
+                    </Routes>
+                </div>
             }
         </div>
     );

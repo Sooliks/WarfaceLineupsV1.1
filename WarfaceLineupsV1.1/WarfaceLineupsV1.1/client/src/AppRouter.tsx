@@ -44,6 +44,11 @@ const AppRouter: React.FC = () => {
         token: { colorBgContainer },
     } = theme.useToken();
     const onClick: MenuProps['onClick'] = (e) => {
+        if(e.key==='/profile'){
+            navigate('/profile/lineups');
+            navigationContext.setNavigation({currentPage: e.key});
+            return
+        }
         navigate(e.key);
         navigationContext.setNavigation({currentPage: e.key});
     };
@@ -54,6 +59,10 @@ const AppRouter: React.FC = () => {
         getItem('Новости', '/news', <FileDoneOutlined/>),
     ];
     useEffect(()=>{
+        if(location.pathname.split('/')[1]==='profile'){
+            navigationContext.setNavigation({currentPage: '/profile'});
+            return
+        }
         navigationContext.setNavigation({currentPage: location.pathname});
     },[])
 
@@ -99,7 +108,7 @@ const AppRouter: React.FC = () => {
                     }}
                 >
                     <Routes>
-                        <Route path={"/profile"} element={<Profile/>}/>
+                        <Route path={"/profile/*"} element={<Profile/>}/>
                         <Route path={"/lineups"} element={<Lineups/>}/>
                         <Route path={"/premium"} element={<Premium/>}/>
                         <Route path={"/news"} element={<News/>}/>

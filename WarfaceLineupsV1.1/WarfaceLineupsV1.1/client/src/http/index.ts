@@ -22,7 +22,8 @@ $clientAuth.interceptors.response.use((res: AxiosResponse)=>{
     return res;
 }, (error) => {
     if (error.response.status === 401) {
-        window.location.reload();
+        //window.location.reload();
+        window.location.replace('/profile');
     }
     return Promise.reject(error);
 })
