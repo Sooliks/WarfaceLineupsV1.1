@@ -13,12 +13,9 @@ public class AccountsControllers : Controller
     [HttpPost("api/registration")]
     public async Task<IResult> OnRegistration([FromBody] RegistrationData registrationData)
     {
-        if (HandlerAccounts.IsEmailExist(registrationData.Email))
-            return Results.BadRequest("Аккаунт с таким email уже существует");
-        if (HandlerAccounts.IsLoginExist(registrationData.Login))
-            return Results.BadRequest("Аккаунт с таким логином уже существует");
-        if (registrationData.Password.Length < 8)
-            return Results.BadRequest("Пароль не должен быть меньше 8 символов");
+        if (HandlerAccounts.IsEmailExist(registrationData.Email)) return Results.BadRequest("Аккаунт с таким email уже существует");
+        if (HandlerAccounts.IsLoginExist(registrationData.Login)) return Results.BadRequest("Аккаунт с таким логином уже существует");
+        if (registrationData.Password.Length < 8) return Results.BadRequest("Пароль не должен быть меньше 8 символов");
 
         var account =
             HandlerAccounts.Register(registrationData.Login, registrationData.Email, registrationData.Password,AuthService.GenerateJwtToken(registrationData.Login));

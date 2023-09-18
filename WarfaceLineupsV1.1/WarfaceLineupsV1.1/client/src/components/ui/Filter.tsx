@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {Affix, Card, Select, Space} from "antd";
-import {MapType} from "../../types/map";
+import {Button, Card, Select, Space, Tooltip} from "antd";
 import {MapsAPI} from "../../http/api/MapsAPI";
 import Search from "antd/es/input/Search";
+import {CloseOutlined} from "@ant-design/icons";
 
 
 type FilterProps = {
@@ -20,13 +20,14 @@ export type FilterType = {
 }
 
 const Filter: React.FC<FilterProps> = ({onChange, direction, searchVisible, widthItemFilter = 260}) => {
-    const [filter,setFilter] = useState<FilterType>({
+    const defaultFilter: FilterType = {
         typeMap: 10,
         typeSide: 10,
         typeFeature: 10,
         typePlant: 10,
         search: ""
-    })
+    }
+    const [filter,setFilter] = useState<FilterType>(defaultFilter)
     const [maps,setMaps] = useState<{value: number, label: string}[]>([{value: 10, label: 'Выберите карту'}]);
     useEffect(()=>{
         onChange(filter);
@@ -37,9 +38,11 @@ const Filter: React.FC<FilterProps> = ({onChange, direction, searchVisible, widt
             _maps.map(m=>setMaps([...maps, {value: m.id, label: m.name}]))
         }).catch((e)=>{});
     },[])
+    const dropFilter = () => {
+        setFilter(defaultFilter);
+    }
 
     return (
-        <Affix offsetTop={64}>
         <div style={{width: direction === "horizontal" ? "100%" : 300}}>
             <Card title={"Фильтр"} >
                 <Space direction={direction} style={{width: '100%', justifyContent: 'space-between'}}>
@@ -99,20 +102,26 @@ const Filter: React.FC<FilterProps> = ({onChange, direction, searchVisible, widt
                     />
                     {searchVisible && direction !== "vertical" &&
                         <Space direction="vertical">
-                            <Search placeholder="Поиск по названию" allowClear onSearch={(value)=> setFilter({...filter, search: value})}
+                            <Search size={"large"} placeholder="Поиск по названию" allowClear onSearch={(value)=> setFilter({...filter, search: value})}
                                     style={{width: direction === "horizontal" ? widthItemFilter : "100%"}}/>
                         </Space>
+                    }
+                    {direction === "horizontal" ?
+                        <Tooltip placement="top" title={"Сбросить фильтр"}>
+                            <Button icon={<CloseOutlined />} style={{width: 40, height: 40}} onClick={dropFilter}/>
+                        </Tooltip>
+                        :
+                        <Button style={{width: '100%'}} onClick={dropFilter}>Сбросить фильтр</Button>
                     }
                 </Space>
             </Card>
             {searchVisible && direction === "vertical" &&
                 <Card title="Найти" style={{marginTop: 20}}>
-                    <Search placeholder="Поиск по названию" allowClear onSearch={(value)=> setFilter({...filter, search: value})}
+                    <Search size={"large"} placeholder="Поиск по названию" allowClear onSearch={(value)=> setFilter({...filter, search: value})}
                             style={{width: "100%"}}/>
                 </Card>
             }
         </div>
-        </Affix>
     );
 };
 
