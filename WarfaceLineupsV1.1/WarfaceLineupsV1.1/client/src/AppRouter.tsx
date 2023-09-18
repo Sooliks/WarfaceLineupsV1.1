@@ -14,6 +14,7 @@ import {
 } from "@ant-design/icons";
 import {Config} from "./conf";
 import {useNavigationContext} from "./context/NavigationContextProvider";
+import NotFound from "./pages/NotFound";
 type MenuItem = Required<MenuProps>['items'][number];
 const {Text,Link} = Typography;
 const { Header, Sider, Content, Footer } = Layout;
@@ -113,6 +114,7 @@ const AppRouter: React.FC = () => {
                         <Route path={"/premium"} element={<Premium/>}/>
                         <Route path={"/news"} element={<News/>}/>
                         <Route path={"/"} element={<Start/>}/>
+                        <Route path="*" element={<NotFound/>} />
                     </Routes>
                 </Content>
                 <Footer style={{ textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: 15}}>
