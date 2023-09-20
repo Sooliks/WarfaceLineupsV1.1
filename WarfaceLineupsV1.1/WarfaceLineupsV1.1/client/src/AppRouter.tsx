@@ -124,7 +124,7 @@ const AppRouter: React.FC = () => {
                         <Route path="*" element={<NotFound/>} />
                     </Routes>
                 </Content>
-                <Footer style={{ textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: 15}}>
+                <Footer style={{textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: 15}}>
                     <Text>Warface Lineups ©2023 Created by <Link href="https://t.me/soolikss" target="_blank">Sooliks</Link></Text>
                 </Footer>
             </Layout>

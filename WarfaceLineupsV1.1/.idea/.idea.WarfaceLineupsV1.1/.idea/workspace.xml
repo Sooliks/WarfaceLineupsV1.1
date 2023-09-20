@@ -10,8 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3c00a32-c452-4a46-9ea6-a137b0d35059" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/components/miniUi/Comment.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarfaceLineupsV1.1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/AppRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/WarfaceLineupsV1.1/client/src/AppRouter.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,6 +133,7 @@
       <workItem from="1694944955540" duration="6292000" />
       <workItem from="1695035982766" duration="4524000" />
       <workItem from="1695124153943" duration="1765000" />
+      <workItem from="1695211663143" duration="798000" />
     </task>
     <task id="LOCAL-00001" summary="fhfhfh">
       <option name="closed" value="true" />
