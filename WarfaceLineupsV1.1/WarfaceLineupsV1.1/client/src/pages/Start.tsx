@@ -33,10 +33,16 @@ const Start: React.FC = () => {
             <Space direction={"vertical"} style={{display:'flex', alignItems: 'center'}}>
                 <Title>Warface Lineups</Title>
                 <Space direction={"horizontal"}>
-                    <Button type={"primary"} onClick={()=>{
-                        navigationContext.setNavigation({currentPage: "/profile"});
-                        navigate("/profile");
-                    }}>Начать</Button>
+                    <Button
+                        type={"primary"}
+                        onClick={()=> {
+                            navigationContext.setNavigation({currentPage: "/profile"});
+                            navigate("/profile");
+                        }}
+                        size={"large"}
+                    >
+                        Начать
+                    </Button>
                 </Space>
             </Space>
         </div>
