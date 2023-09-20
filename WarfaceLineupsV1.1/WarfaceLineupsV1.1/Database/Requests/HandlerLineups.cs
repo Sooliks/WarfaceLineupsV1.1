@@ -9,12 +9,12 @@ public static class HandlerLineups
     public static Lineup GetVerifiedLineupByLineupId(int lineupId)
     {
         using Context db = new Context();
-        return db.Lineups.FirstOrDefault(v => v.Id == lineupId && v.IsVerified == true);
+        return db.Lineups.Include(v=>v.TypeMap).Include(v=>v.Owner).FirstOrDefault(v => v.Id == lineupId && v.IsVerified == true);
     }
     public static Lineup GetLineupByLineupId(int lineupId)
     {
         using Context db = new Context();
-        return db.Lineups.FirstOrDefault(v => v.Id == lineupId);
+        return db.Lineups.Include(v=>v.TypeMap).Include(v=>v.Owner).FirstOrDefault(v => v.Id == lineupId);
     }
 
     public static void AddNewLineup(string title, string description, string urlOnVideo, Map map, byte typeSide, byte typeFeature, byte typePlant, Account owner)
@@ -94,21 +94,21 @@ public static class HandlerLineups
     {
         using Context db = new Context();
         
-        return db.Lineups.OrderByDescending(v=>v.Id).Where(v=> (v.TypeSide == filterForLineupsData.TypeSide || filterForLineupsData.TypeSide == 10) && (v.TypeFeature == filterForLineupsData.TypeFeature || filterForLineupsData.TypeFeature == 10) && (v.TypeMap.Id == filterForLineupsData.TypeGameMap || filterForLineupsData.TypeGameMap == 10) && (v.TypePlant == filterForLineupsData.TypePlant || filterForLineupsData.TypePlant == 10) && (v.Title.ToLower().StartsWith(filterForLineupsData.Search.ToLower()) || v.Title == "") && v.IsVerified == true).Skip(minId).Take(count).Include(v=>v.TypeMap).ToList();
+        return db.Lineups.OrderByDescending(v=>v.Id).Where(v=> (v.TypeSide == filterForLineupsData.TypeSide || filterForLineupsData.TypeSide == 10) && (v.TypeFeature == filterForLineupsData.TypeFeature || filterForLineupsData.TypeFeature == 10) && (v.TypeMap.Id == filterForLineupsData.TypeGameMap || filterForLineupsData.TypeGameMap == 10) && (v.TypePlant == filterForLineupsData.TypePlant || filterForLineupsData.TypePlant == 10) && (v.Title.ToLower().StartsWith(filterForLineupsData.Search.ToLower()) || v.Title == "") && v.IsVerified == true).Skip(minId).Take(count).Include(v=>v.TypeMap).Include(v=>v.Owner).ToList();
     }
     public static List<Lineup> GetUnVerifiedLineups(int minId, int count)
     {
         using Context db = new Context();
-        return db.Lineups.OrderByDescending(v=>v.Id).Where(v=> v.IsVerified == false).Skip(minId).Take(count).Include(v=>v.TypeMap).ToList();
+        return db.Lineups.OrderByDescending(v=>v.Id).Where(v=> v.IsVerified == false).Skip(minId).Take(count).Include(v=>v.TypeMap).Include(v=>v.Owner).ToList();
     }
     public static List<Lineup> GetVerifiedLineupsByOwnerId(FilterForLineupsData filterForLineupsData, int minId, int count, int ownerId)
     {
         using Context db = new Context();
-        return db.Lineups.OrderByDescending(v=>v.Id).Where(v=> (v.TypeSide == filterForLineupsData.TypeSide || filterForLineupsData.TypeSide == 10) && (v.TypeFeature == filterForLineupsData.TypeFeature || filterForLineupsData.TypeFeature == 10) && (v.TypeMap.Id == filterForLineupsData.TypeGameMap || filterForLineupsData.TypeGameMap == 10) && (v.TypePlant == filterForLineupsData.TypePlant || filterForLineupsData.TypePlant == 10) && (v.Title.ToLower().StartsWith(filterForLineupsData.Search.ToLower()) || v.Title == "") && v.IsVerified == true && v.Owner.Id == ownerId).Skip(minId).Take(count).Include(v=>v.TypeMap).ToList();
+        return db.Lineups.OrderByDescending(v=>v.Id).Where(v=> (v.TypeSide == filterForLineupsData.TypeSide || filterForLineupsData.TypeSide == 10) && (v.TypeFeature == filterForLineupsData.TypeFeature || filterForLineupsData.TypeFeature == 10) && (v.TypeMap.Id == filterForLineupsData.TypeGameMap || filterForLineupsData.TypeGameMap == 10) && (v.TypePlant == filterForLineupsData.TypePlant || filterForLineupsData.TypePlant == 10) && (v.Title.ToLower().StartsWith(filterForLineupsData.Search.ToLower()) || v.Title == "") && v.IsVerified == true && v.Owner.Id == ownerId).Skip(minId).Take(count).Include(v=>v.TypeMap).Include(v=>v.Owner).ToList();
     }
     public static List<Lineup> GetAllLineupsByOwnerId(FilterForLineupsData filterForLineupsData, int minId, int count, int ownerId)
     {
         using Context db = new Context();
-        return db.Lineups.OrderByDescending(v=>v.Id).Where(v=> (v.TypeSide == filterForLineupsData.TypeSide || filterForLineupsData.TypeSide == 10) && (v.TypeFeature == filterForLineupsData.TypeFeature || filterForLineupsData.TypeFeature == 10) && (v.TypeMap.Id == filterForLineupsData.TypeGameMap || filterForLineupsData.TypeGameMap == 10) && (v.TypePlant == filterForLineupsData.TypePlant || filterForLineupsData.TypePlant == 10) && (v.Title.ToLower().StartsWith(filterForLineupsData.Search.ToLower()) || v.Title == "") && v.Owner.Id == ownerId).Skip(minId).Take(count).Include(v=>v.TypeMap).ToList();
+        return db.Lineups.OrderByDescending(v=>v.Id).Where(v=> (v.TypeSide == filterForLineupsData.TypeSide || filterForLineupsData.TypeSide == 10) && (v.TypeFeature == filterForLineupsData.TypeFeature || filterForLineupsData.TypeFeature == 10) && (v.TypeMap.Id == filterForLineupsData.TypeGameMap || filterForLineupsData.TypeGameMap == 10) && (v.TypePlant == filterForLineupsData.TypePlant || filterForLineupsData.TypePlant == 10) && (v.Title.ToLower().StartsWith(filterForLineupsData.Search.ToLower()) || v.Title == "") && v.Owner.Id == ownerId).Skip(minId).Take(count).Include(v=>v.TypeMap).Include(v=>v.Owner).ToList();
     }
 }

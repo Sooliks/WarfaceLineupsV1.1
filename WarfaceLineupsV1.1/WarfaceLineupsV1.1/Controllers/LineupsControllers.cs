@@ -14,7 +14,7 @@ public class LineupsControllers : Controller
         int minId = (page * countVideosOnOnePage) - countVideosOnOnePage;
         if (filterForLineupsData.Search == null) filterForLineupsData.Search = "";
         var lineups = HandlerLineups.GetVerifiedLineups(filterForLineupsData, minId, countVideosOnOnePage);
-        return Results.Json(lineups.Select(l => new { Id = l.Id, Title = l.Title, Description = l.Description, IsVerified = l.IsVerified, UrlOnVideo = l.UrlOnVideo, TypeMap = l.TypeMap.Id, TypeSide = l.TypeSide, TypeFeature = l.TypeFeature, TypePlant = l.TypePlant }).ToList());
+        return Results.Json(lineups.Select(l => new { Id = l.Id, Title = l.Title, Description = l.Description, IsVerified = l.IsVerified, UrlOnVideo = l.UrlOnVideo, TypeMap = l.TypeMap.Id, TypeSide = l.TypeSide, TypeFeature = l.TypeFeature, TypePlant = l.TypePlant, OwnerLogin = l.Owner.Login, OwnerId = l.Owner.Id }).ToList());
     }
     [AuthorizeAdminByJwt]
     [HttpGet("api/unverifiedlineups")]
@@ -23,7 +23,7 @@ public class LineupsControllers : Controller
         const int countVideosOnOnePage = 8;
         int minId = (page * countVideosOnOnePage) - countVideosOnOnePage;
         var lineups = HandlerLineups.GetUnVerifiedLineups(minId, countVideosOnOnePage);
-        return Results.Json(lineups.Select(l => new { Id = l.Id, Title = l.Title, Description = l.Description, IsVerified = l.IsVerified, UrlOnVideo = l.UrlOnVideo, TypeMap = l.TypeMap.Id, TypeSide = l.TypeSide, TypeFeature = l.TypeFeature, TypePlant = l.TypePlant }).ToList());
+        return Results.Json(lineups.Select(l => new { Id = l.Id, Title = l.Title, Description = l.Description, IsVerified = l.IsVerified, UrlOnVideo = l.UrlOnVideo, TypeMap = l.TypeMap.Id, TypeSide = l.TypeSide, TypeFeature = l.TypeFeature, TypePlant = l.TypePlant, OwnerLogin = l.Owner.Login, OwnerId = l.Owner.Id }).ToList());
 
     }
     [HttpGet("api/verifiedlineupsbyownerid")]
@@ -33,7 +33,7 @@ public class LineupsControllers : Controller
         int minId = (page * countVideosOnOnePage) - countVideosOnOnePage;
         if (filterForLineupsData.Search == null) filterForLineupsData.Search = "";
         var lineups = HandlerLineups.GetVerifiedLineupsByOwnerId(filterForLineupsData, minId, countVideosOnOnePage, ownerId);
-        return Results.Json(lineups.Select(l => new { Id = l.Id, Title = l.Title, Description = l.Description, IsVerified = l.IsVerified, UrlOnVideo = l.UrlOnVideo, TypeMap = l.TypeMap.Id, TypeSide = l.TypeSide, TypeFeature = l.TypeFeature, TypePlant = l.TypePlant }).ToList());
+        return Results.Json(lineups.Select(l => new { Id = l.Id, Title = l.Title, Description = l.Description, IsVerified = l.IsVerified, UrlOnVideo = l.UrlOnVideo, TypeMap = l.TypeMap.Id, TypeSide = l.TypeSide, TypeFeature = l.TypeFeature, TypePlant = l.TypePlant, OwnerLogin = l.Owner.Login, OwnerId = l.Owner.Id }).ToList());
     }
     [AuthorizeByJwt]
     [HttpGet("api/lineupsbyowner")]
@@ -44,7 +44,7 @@ public class LineupsControllers : Controller
         int minId = (page * countVideosOnOnePage) - countVideosOnOnePage;
         if (filterForLineupsData.Search == null) filterForLineupsData.Search = "";
         var lineups =HandlerLineups.GetAllLineupsByOwnerId(filterForLineupsData, minId, countVideosOnOnePage, account.Id);
-        return Results.Json(lineups.Select(l => new { Id = l.Id, Title = l.Title, Description = l.Description, IsVerified = l.IsVerified, UrlOnVideo = l.UrlOnVideo, TypeMap = l.TypeMap.Id, TypeSide = l.TypeSide, TypeFeature = l.TypeFeature, TypePlant = l.TypePlant }).ToList());
+        return Results.Json(lineups.Select(l => new { Id = l.Id, Title = l.Title, Description = l.Description, IsVerified = l.IsVerified, UrlOnVideo = l.UrlOnVideo, TypeMap = l.TypeMap.Id, TypeSide = l.TypeSide, TypeFeature = l.TypeFeature, TypePlant = l.TypePlant, OwnerLogin = l.Owner.Login, OwnerId = l.Owner.Id }).ToList());
 
     }
     [AuthorizeAdminByJwt]
