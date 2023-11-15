@@ -9,9 +9,9 @@ namespace WarfaceLineups.Utils;
 
 public class EmailService
 {
-    private static readonly string Mail = "sooliks@mail.ru";
-    private static readonly string Password = "pQD3qfjVhM0cxpPLkzNE";
-    private static readonly string Username = "Warface Lineups";
+    private static readonly string Mail = ";
+    private static readonly string Password = "";
+    private static readonly string Username = "";
     private static readonly string Host = "smtp.mail.ru";
     private static readonly int Port = 587;
     
